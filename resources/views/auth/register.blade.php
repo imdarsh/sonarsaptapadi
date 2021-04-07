@@ -9,7 +9,7 @@
         <!-- Learn more -->
         <div class="row mt-5">
           <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
-            <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">Find Your Perfect Partner </h1>
+            <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">Meet more than 1 Lakh Sonar Bachelors</h1>
             <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
             <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s">We help you find your perfect someone.</h6>
             <a class="btn btn-outline-white btn-rounded wow fadeInLeft" data-wow-delay="0.3s">Learn more</a>
@@ -25,7 +25,7 @@
                     <i class="fa fa-user white-text"></i> {{ __('Register') }}</h3>
                   <hr class="hr-light">
                 </div>
-                <!-- <div class="md-form">
+                <div class="md-form">
                   <select class="mdb-select white-text form-control" id="form4">
                     <option value="" disabled selected>Create Profile For</option>
                     <option value="1">Self</option>
@@ -34,7 +34,7 @@
                     <option value="2">Brother</option>
                     <option value="3">Sister</option>
                   </select>
-                </div> -->
+                </div>
                 <div class="md-form">
                   <i class="fa fa-user prefix white-text active"></i>
                   <input type="text" id="form3" class="white-text form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required>
@@ -94,74 +94,4 @@
       </div>
     </div>
   </div>
-
-<!-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div> -->
 @endsection

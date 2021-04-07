@@ -37,7 +37,7 @@
         <div class="row mt-5">
         <div class="mask d-flex align-items-center h-100" >
       <div class="container">
-        <p class="h1 mb-4 mb-md-5 text-white text-uppercase text-center">Meet more than 1 Lakh Sonar Candidates</p>
+        <p class="h1 mb-4 mb-md-5 text-white text-uppercase text-center">Meet more than 1 Lakh Sonar Bachelors</p>
         <div class="card" style="background-color: rgba(0,0,0,.7);">
           <div class="card-body p-4">
             <div class="row justify-content-center">
@@ -83,108 +83,174 @@
 
 <!-- main section -->
 <main>
-<div class="mx-5 my-5 p-5 z-depth-1">
 
 
-<!--Section: Content-->
-<section class="dark-grey-text">
+  <!-- Section -->
+  <section class="my-5">
+    
+    <style>
+      .timeline {
+        position: relative;
+        list-style: none;
+        padding: 1rem 0;
+        margin: 0;
+      }
 
-  <!-- Section heading -->
-  <h2 class="text-center font-weight-bold mb-4 pb-2">How It Works?</h2>
-  <!-- Section description -->
-  <p class="text-center lead grey-text mx-auto mb-5">Follow the below instructions to understand how this site works.</p>
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        margin-left: -1px;
+        background-color: #50a1ff;
+      }
 
-  <!-- Grid row -->
-  <div class="row">
+      .timeline-element {
+        position: relative;
+        width: 50%;
+        padding: 1rem 0;
+        padding-right: 2.5rem;
+        text-align: right;
+      }
 
-    <!-- Grid column -->
-    <div class="col-lg-5 text-center text-lg-left">
-      <!-- <img class="img-fluid" src="{{ asset('images/background.jpg') }}" alt="Sample image"> -->
-      <img class="img-fluid" src="{{ asset('images/bg.JPG') }}" alt="Sample image">
+      .timeline-element::before {
+        content: '';
+        position: absolute;
+        right: -8px;
+        top: 1.35rem;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 2px solid #50a1ff;
+        background-color: #fff;
+      }
+
+      .timeline-element:nth-child(even)::before {
+        right: auto;
+        left: -8px;
+      }
+
+      .timeline-element:nth-child(even) {
+        margin-left: 50%;
+        padding-left: 2.5rem;
+        padding-right: 0;
+        text-align: left;
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline::before {
+          left: 8px;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element {
+          width: 100%;
+          text-align: left;
+          padding-left: 2.5rem;
+          padding-right: 0;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element::before {
+          top: 1.25rem;
+          left: 1px;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element:nth-child(even) {
+          margin-left: 0rem;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element {
+          width: 100%;
+          text-align: left;
+          padding-left: 2.5rem;
+          padding-right: 0;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element:nth-child(even)::before {
+          left: 1px;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element::before {
+          top: 1.25rem;
+        }
+      }
+    </style>
+    
+    <h3 class="font-weight-bold text-center dark-grey-text pb-2">Our Services</h3>
+    <hr class="w-header my-4">
+    <p class="lead text-center text-muted pt-2 mb-5">We Help you connect with more than 1 Lakh Sonar Bachelors</p>
+    
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+
+        <ol class="timeline">
+          <li class="timeline-element">
+            <h5 class="font-weight-bold dark-grey-text mb-3">Register to our Website</h5>
+            <p class="text-muted">Register to our website using name and email</p>
+          </li>
+
+          <li class="timeline-element">
+            <h5 class="font-weight-bold dark-grey-text mb-3">Got the first 100 users</h5>
+            <p class="grey-text font-small"><time datetime="2017-08-17">17 Aug 2017</time></p>
+            <p><img class="img-fluid z-depth-1-half rounded" src="https://mdbootstrap.com/img/Photos/Horizontal/Work/12-col/img%20(6).jpg" alt="..."></p>
+            <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam adipisci reiciendis porro natus laudantium similique. 
+              Explicabo amet ipsum fugiat aliquam alias.</p>
+          </li>
+
+          <li class="timeline-element">
+            <h5 class="font-weight-bold dark-grey-text mb-3">Raised $1.4 million in seed funding</h5>
+            <p class="grey-text font-small"><time datetime="2018-03-26">26 Mar 2019</time></p>
+            <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam adipisci reiciendis porro natus laudantium similique. 
+              Explicabo amet ipsum fugiat aliquam alias.</p>
+          </li>
+
+          <li class="timeline-element">
+            <h5 class="font-weight-bold dark-grey-text mb-3">Team size increased to 20</h5>
+            <p class="grey-text font-small"><time datetime="2018-04-14">14 Apr 2019</time></p>
+            <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam adipisci reiciendis porro natus laudantium similique. 
+              Explicabo amet ipsum fugiat aliquam alias.</p>
+          </li>
+        </ol>
+
+      </div>
     </div>
-    <!-- Grid column -->
+    
+  </section>
 
-    <!-- Grid column -->
-    <div class="col-lg-7">
-
-      <!-- Grid row -->
-      <div class="row mb-3">
-
-        <!-- Grid column -->
-        <div class="col-1">
-          <i class="fas fa-share fa-lg indigo-text"></i>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-xl-10 col-md-11 col-10">
-          <h5 class="font-weight-bold mb-3">Register</h5>
-          <p class="grey-text">Register and Create Your Profile. Register and Create Your Profile. Register and Create Your Profile. Register and Create Your Profile. Register and Create Your Profile.</p>
-        </div>
-        <!-- Grid column -->
-
-      </div>
-      <!-- Grid row -->
-
-      <!-- Grid row -->
-      <div class="row mb-3">
-
-        <!-- Grid column -->
-        <div class="col-1">
-          <i class="fas fa-share fa-lg indigo-text"></i>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-xl-10 col-md-11 col-10">
-          <h5 class="font-weight-bold mb-3">Search</h5>
-          <p class="grey-text">Search for your significant other using various filters like Search by city, age, education, sub-caste etc</p>
-        </div>
-        <!-- Grid column -->
-
-      </div>
-      <!-- Grid row -->
-
-      <!--Grid row-->
-      <div class="row">
-
-        <!-- Grid column -->
-        <div class="col-1">
-          <i class="fas fa-share fa-lg indigo-text"></i>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-xl-10 col-md-11 col-10">
-          <h5 class="font-weight-bold mb-3">Connect</h5>
-          <p class="grey-text mb-0">Select from the packages provided and connect with your interest. We also provide chat feature to communicate and understand each other.</p>
-        </div>
-        <!-- Grid column -->
-
-      </div>
-      <!--Grid row-->
-
+<!-- Gallery -->
+<div class=" my-5 py-5">
+  <!--Section: Content-->
+  <section class="text-center">
+    <div class="row-md mx-15">
+          <img src="{{ asset('images/wedding.png') }}" class="img" alt="smaple image">
     </div>
-    <!--Grid column-->
 
-  </div>
-  <!-- Grid row -->
-
-</section>
-<!--Section: Content-->
+  </section>
+  <!--Section: Content-->
 
 
 </div>
-
-
-
 
 <!-- Counter -->
 <!-- <div class="container my-5 z-depth-1 px-0 rounded"> -->
 
 
   <!--Section: Content-->
-  <section class="white-text red p-5 rounded">
+  <section class="white-text p-5 rounded" style="background-color:#ffa500">
     
     <h3 class="text-center font-weight-bold mb-4 pb-2">People We Have Help Connect</h3>
 
