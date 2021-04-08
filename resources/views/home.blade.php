@@ -200,27 +200,30 @@
         <ol class="timeline">
           <li class="timeline-element">
             <h5 class="font-weight-bold dark-grey-text mb-3">Register to our Website</h5>
+            <p><img class="img-fluid rounded" src="{{ asset('images/wedding.png') }}" alt="..."></p>
             <p class="text-muted">Register to our website using name and email</p>
           </li>
 
           <li class="timeline-element">
             <h5 class="font-weight-bold dark-grey-text mb-3">Got the first 100 users</h5>
-            <p class="grey-text font-small"><time datetime="2017-08-17">17 Aug 2017</time></p>
-            <p><img class="img-fluid z-depth-1-half rounded" src="https://mdbootstrap.com/img/Photos/Horizontal/Work/12-col/img%20(6).jpg" alt="..."></p>
+            <!-- <p class="grey-text font-small"><time datetime="2017-08-17">17 Aug 2017</time></p> -->
+            <p><img class="img-fluid rounded" src="{{ asset('images/png/2.2.png') }}" alt="..."></p>
             <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam adipisci reiciendis porro natus laudantium similique. 
               Explicabo amet ipsum fugiat aliquam alias.</p>
           </li>
 
           <li class="timeline-element">
             <h5 class="font-weight-bold dark-grey-text mb-3">Raised $1.4 million in seed funding</h5>
-            <p class="grey-text font-small"><time datetime="2018-03-26">26 Mar 2019</time></p>
+            <p><img class="img-fluid rounded" src="{{ asset('images/png/3.3.png') }}" alt="..."></p>
+            <!-- <p class="grey-text font-small"><time datetime="2018-03-26">26 Mar 2019</time></p> -->
             <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam adipisci reiciendis porro natus laudantium similique. 
               Explicabo amet ipsum fugiat aliquam alias.</p>
           </li>
 
           <li class="timeline-element">
             <h5 class="font-weight-bold dark-grey-text mb-3">Team size increased to 20</h5>
-            <p class="grey-text font-small"><time datetime="2018-04-14">14 Apr 2019</time></p>
+            <p><img class="img-fluid rounded" src="{{ asset('images/png/1.1.png') }}" alt="..."></p>
+            <!-- <p class="grey-text font-small"><time datetime="2018-04-14">14 Apr 2019</time></p> -->
             <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam adipisci reiciendis porro natus laudantium similique. 
               Explicabo amet ipsum fugiat aliquam alias.</p>
           </li>
@@ -230,20 +233,6 @@
     </div>
     
   </section>
-
-<!-- Gallery -->
-<div class=" my-5 py-5">
-  <!--Section: Content-->
-  <section class="text-center">
-    <div class="row-md mx-15">
-          <img src="{{ asset('images/wedding.png') }}" class="img" alt="smaple image">
-    </div>
-
-  </section>
-  <!--Section: Content-->
-
-
-</div>
 
 <!-- Counter -->
 <!-- <div class="container my-5 z-depth-1 px-0 rounded"> -->

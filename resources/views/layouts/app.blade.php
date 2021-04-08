@@ -27,7 +27,7 @@
 <body>
 <header>
 <nav class="navbar navbar-expand-lg navbar-dark py-0 fixed-top scrolling-navbar">
-<img src="{{ asset('images/logo2.png') }}" alt="logo" style="width:150px">
+<img src="{{ asset('images/logo2.png') }}" alt="logo" style="width:200px">
     <div class="container">
       <a class="navbar-brand" href="#">
         
@@ -63,6 +63,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/profile">
+                                        Profile
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
