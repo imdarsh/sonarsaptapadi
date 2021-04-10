@@ -3,6 +3,7 @@
 @section('content')
 <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+@include('layouts.header')
   <div class="view" style="background-image: url('{{ asset('images/bg.JPG') }}'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
       <div class="container">

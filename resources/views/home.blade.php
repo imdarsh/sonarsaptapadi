@@ -3,6 +3,7 @@
 @section('content')
 <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+<!-- @include('layouts.header') -->
 <!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -23,17 +24,10 @@
     </div>
 </div> -->
 
-<header>
-  <!-- Navbar -->
-
-  <!-- Navbar -->
-  <!-- Full Page Intro -->
+<!-- <header>
   <div class="view" style="background-image: url('{{ asset('images/bg.JPG') }}'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-    <!-- Mask & flexbox options-->
     <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
-      <!-- Content -->
       <div class="container">
-        <!--Grid row-->
         <div class="row mt-5">
         <div class="mask d-flex align-items-center h-100" >
       <div class="container">
@@ -72,21 +66,17 @@
         </div>
       </div>
     </div>
-        <!--Grid row-->
       </div>
-      <!-- Content -->
     </div>
-    <!-- Mask & flexbox options-->
   </div>
-  <!-- Full Page Intro -->
-</header>   
+</header>    -->
 
-<!-- main section -->
+@include('layouts.navbar')
+
+
 <main>
-
-
-  <!-- Section -->
-  <section class="my-5">
+<!-- Services -->
+  <section class="mx-5 my-5">
     
     <style>
       .timeline {
