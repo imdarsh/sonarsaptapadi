@@ -19,7 +19,7 @@
         <li class="nav-item">
           <a class="nav-link" href="/home">Home</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">Features</a>
         </li>
         <li class="nav-item">
@@ -27,7 +27,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
-        </li>
+        </li> -->
 
       </ul>
       <!-- Links -->
