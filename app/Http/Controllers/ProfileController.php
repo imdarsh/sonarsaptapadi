@@ -8,6 +8,10 @@ use App\Models\User;
 
 class ProfileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     //Profile page
     public function show()
     {
@@ -38,6 +42,13 @@ class ProfileController extends Controller
     {    
         $id = auth()->id();
         $data = User::where('id',$id)->get();
-        return view('profile.profile')->with('data',$data);
+        return view('profile.show')->with('data',$data);
+    }
+
+    public function edit()
+    {
+        $id = auth()->id();
+        $data = User::where('id',$id)->get();
+        return view('profile.edit')->with('data',$data);
     }
 }

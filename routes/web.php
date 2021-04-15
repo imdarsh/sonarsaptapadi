@@ -21,6 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/profile',[App\Http\Controllers\ProfileController::class, 'index'])->middleware('auth');
-Route::get('/create-profile',[App\Http\Controllers\ProfileController::class, 'show'])->middleware('auth');
-Route::post('/create-profile',[App\Http\Controllers\ProfileController::class, 'create'])->middleware('auth');
+Route::get('/profile',[App\Http\Controllers\ProfileController::class, 'index']);
+Route::get('/create-profile',[App\Http\Controllers\ProfileController::class, 'show']);
+Route::post('/create-profile',[App\Http\Controllers\ProfileController::class, 'create']);
+Route::get('/profile/edit/{id}', [App\Http\Controllers\ProfileController::class, 'edit']);
