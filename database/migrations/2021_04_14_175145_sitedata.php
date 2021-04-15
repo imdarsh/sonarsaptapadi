@@ -13,7 +13,13 @@ class Sitedata extends Migration
      */
     public function up()
     {
-        //
+        // Saving site data into this table
+        Schema::create('sitedata', function (Blueprint $table){
+            $table->id();
+            $table->string('incomelist')->nullable();
+            $table->string('qualificationlist')->nullable();
+            $table->string('jobprofile')->nullable();
+        });
     }
 
     /**
@@ -24,5 +30,6 @@ class Sitedata extends Migration
     public function down()
     {
         //
+        Schema::drop('sitedata');
     }
 }

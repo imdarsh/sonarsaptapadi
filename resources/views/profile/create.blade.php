@@ -7,39 +7,39 @@
 
       <div class="row-md-12 flex justify-content-center">
 
-          <form class="text-center">
-
+          <form class="text-center" method="POST" action="/create-profile">
+          @csrf
             <p class="h4 mb-4">Let's Create Your Profile</p>
 
             <p>Creating profile will help you connect with people</p>
 
             <div class="col">
 
-            <input type="text" id="currentCity" class="form-control mb-4" placeholder="Your Current City" required>
+            <input name="city" type="text" id="currentCity" class="form-control mb-4" placeholder="Your Current City" required>
 
-            <select class="mdb-select form-control md-form" required>
+            <select name="live_with_family" class="mdb-select form-control md-form" required>
             <option value="" disabled selected>Do you live with your family?</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
             </select>
 
-            <input type="text" id="yourHeight" class="form-control mb-4" placeholder="Your Height (in cms)" required>
+            <input name="height" type="text" id="yourHeight" class="form-control mb-4" placeholder="Your Height (in cms)" required>
 
-            <select class="mdb-select form-control md-form" required>
+            <select name="marital_status" class="mdb-select form-control md-form" required>
             <option value="" disabled selected>Marital Status</option>
             <option value="Never Married">Never Married</option>
             <option value="Divorced">Divorced</option>
             <option value="Widowed / Widower">Widow / Widower</option>
             </select>
 
-            <select class="mdb-select form-control md-form" required>
+            <select name="subcaste" class="mdb-select form-control md-form" required>
             <option value="" disabled selected>Sub-Caste</option>
             <option value="Ahir">Ahir</option>
             <option value="Lad">Lad</option>
             <option value="Other">Other</option>
             </select>
 
-            <select class="mdb-select form-control md-form" required>
+            <select name="highest_qualification" class="mdb-select form-control md-form" required>
             <option value="" disabled selected>Highest Qualification</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
@@ -48,21 +48,22 @@
             </div>
             <div class="col">
 
-            <select class="mdb-select form-control md-form" required>
+            <select name="working_in" class="mdb-select form-control md-form" required>
             <option value="" disabled selected>Job / Business</option>
             <option value="Goverment Sector">Goverment Sector</option>
             <option value="Private Sector">Private Sector</option>
             <option value="Freelance">Freelance</option>
+            <option value="Business">Business</option>
             <option value="Not Working">Not Working</option>
             </select>
 
-            <select class="mdb-select form-control md-form">
+            <select name="jobprofile" class="mdb-select form-control md-form">
             <option value="" disabled selected>As</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
             </select>
 
-            <select class="mdb-select form-control md-form">
+            <select name="annual_income" class="mdb-select form-control md-form">
             <option value="" disabled selected>Annual Income</option>
             <option value="Upto Rs 1 Lakh Yearly">Upto Rs 1 Lakh Yearly</option> 
             <option value="Rs 1 to 2 Lakh Yearly">Rs 1 to 2 Lakh Yearly</option> 
@@ -78,14 +79,14 @@
             <option value="1 Crore & Above Yearly">1 Crore & Above Yearly</option> 
             </select>
 
-            <textarea name="" id="" cols="30" rows="10" class="form-control mb-4" placeholder="Bio" required></textarea>
+            <textarea name="bio" name="" id="" cols="30" rows="10" class="form-control mb-4" placeholder="Bio" required></textarea>
 
-            <input type="text" class="form-control mb-4" placeholder="Mobile no" required>
+            <input name="mobileno" type="text" class="form-control mb-4" placeholder="Mobile no" required>
 
             </div>
 
             <button class="btn btn-primary btn-block" type="submit">Create Profile</button>
-
+    
           </form>
         
       </div>
