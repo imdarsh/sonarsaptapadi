@@ -10,7 +10,7 @@
         <div class="mb-4 pb-2">
           <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="z-depth-1 rounded-circle img-fluid mx-auto" alt="smaple image">
         </div>
-        <a href="profile/edit/{{ $info->id }}" class="btn btn-primary btn-rounded">Upload Picture</a>
+        <a href="profile/edit/{{ $info->id }}" class="btn btn-primary btn-rounded">Update Profile</a>
         <ul class="list-unstyled d-flex justify-content-center mt-3 mb-0 red-text">
           <li><i class="fab fa-twitter mx-2"></i></li>
           <li><i class="fab fa-facebook-f mx-2"></i></li>
