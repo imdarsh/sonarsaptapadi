@@ -27,16 +27,6 @@
                   <hr class="hr-light">
                 </div>
                 <div class="md-form">
-                  <select class="mdb-select white-text form-control" id="form4">
-                    <option value="" disabled selected>Create Profile For</option>
-                    <option value="1">Self</option>
-                    <option value="2">Son</option>
-                    <option value="2">Daughter</option>
-                    <option value="2">Brother</option>
-                    <option value="3">Sister</option>
-                  </select>
-                </div>
-                <div class="md-form">
                   <i class="fa fa-user prefix white-text active"></i>
                   <input type="text" id="form3" class="white-text form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required>
                   <label for="form3" class="active">{{ __('Name') }}</label>

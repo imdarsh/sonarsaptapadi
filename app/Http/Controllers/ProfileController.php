@@ -23,7 +23,7 @@ class ProfileController extends Controller
         $id = auth()->id();
         $profile = User::find($id);   
         $profile->city = $request->input('city');
-        $profile->live_with_family = $request->input('live_with_family');
+        // $profile->live_with_family = $request->input('live_with_family');
         $profile->height = $request->input('height');
         $profile->marital_status = $request->input('marital_status');
         $profile->subcaste = $request->input('subcaste');

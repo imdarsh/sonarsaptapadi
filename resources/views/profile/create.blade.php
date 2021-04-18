@@ -14,6 +14,21 @@
             <p>Creating profile will help you connect with people</p>
 
             <div class="col">
+            <div class="md-form">
+                  <select  class="mdb-select form-control" id="profile_for" name="profile_for">
+                    <option value="" disabled selected>Create Profile For</option>
+                    <option value="Son">Son</option>
+                    <option value="Self">Self</option>
+                    <option value="Daughter">Daughter</option>
+                    <option value="Brother">Brother</option>
+                    <option value="Sister">Sister</option>
+                  </select>
+            </div>
+
+            <select name="gender" id="gender" class="form-control md-select md-form">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
 
             <input name="city" type="text" id="currentCity" class="form-control mb-4" placeholder="Your Current City" required>
 
@@ -92,4 +107,6 @@
       </div>
     </section>
   </div>
+
+
 @endsection
