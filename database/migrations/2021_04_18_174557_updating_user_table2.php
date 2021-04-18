@@ -16,6 +16,8 @@ class UpdatingUserTable2 extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $table->string('profile_for')->nullable();
+            $table->string('living_with_family')->nullable();
+            $table->string('city')->nullable();
         });
     }
 
@@ -29,6 +31,8 @@ class UpdatingUserTable2 extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $table->dropColumn('profile_for');
+            $table->dropColumn('living_with_family');
+            $table->dropColumn('city');
         });
     }
 }

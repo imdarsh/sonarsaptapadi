@@ -10,6 +10,7 @@
         <div class="mb-4 pb-2">
           <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="z-depth-1 rounded-circle img-fluid mx-auto" alt="smaple image">
         </div>
+        <!-- <a href="profile/edit/{{ $info->id }}" class="btn btn-primary btn-rounded">Update Profile</a> -->
         <a href="profile/edit/{{ $info->id }}" class="btn btn-primary btn-rounded">Update Profile</a>
         <ul class="list-unstyled d-flex justify-content-center mt-3 mb-0 red-text">
           <li><i class="fab fa-twitter mx-2"></i></li>
@@ -20,13 +21,52 @@
       </div>
     </div>
     </section>
-    <h3 class="font-weight-bold">Basic Information</h3>
+    <div class="my-5">
+    <p class="h1">Basic Information</p>
     <p class="font-weight-bold">Name: {{ $info->name }}</p>
-    <p class="font-weight-bold">Email: {{ $info->email }}</p>
-    <p class="font-weight-bold">City: {{ $info->city }}</p>
+    <p class="font-weight-bold">Age: {{ $info->age }}</p>
+    <p class="font-weight-bold">Date of Birth: {{ $info->dob }}</p>
     <p class="font-weight-bold">Height: {{ $info->height }} cm</p>
-    <p class="font-weight-bold">Bio: {{ $info->bio }}</p>
-    <p class="font-weight-bold">Mobileno: {{ $info->mobileno }}</p>
+    <p class="font-weight-bold">Blood Group: {{ $info->blood_group }}</p>
+    </div>
+
+    <div class="my-5">
+    <h3 class="font-weight-bold">Education and Career</h3>
+    <p class="font-weight-bold">Highest Qualification: {{ $info->highest_qualification }}</p>
+    <p class="font-weight-bold">College Attended: {{ $info->college_attended }}</p>
+    <p class="font-weight-bold">Working For: {{ $info->working_for }}</p>
+    <p class="font-weight-bold">Working As: {{ $info->working_as }}</p>
+    <p class="font-weight-bold">Annual Income: {{ $info->annual_income }}</p>
+    </div>
+    
+    <div class="my-5">
+    <h3 class="font-weight-bold">Family Details</h3>
+    <p class="font-weight-bold">Father's Name: {{ $info->father_name }}</p>
+    <p class="font-weight-bold">Mother's Name: {{ $info->mother_name }}</p>
+    <p class="font-weight-bold">No of Brothers: {{ $info->no_of_brothers }}</p>
+    <p class="font-weight-bold">No of Sisters: {{ $info->no_of_sisters }}</p>
+    <p class="font-weight-bold">Native Place: {{ $info->native_place }}</p>
+    <p class="font-weight-bold">Father's Occupation: {{ $info->father_occupation }}</p>
+    <p class="font-weight-bold">Mother Tongue: {{ $info->mother_tongue }}</p>
+    </div>
+    
+    <div class="my-5">
+    <h3 class="font-weight-bold">Astro Details</h3>
+    <p class="font-weight-bold">Date of Birth: {{ $info->dob }}</p>
+    <p class="font-weight-bold">Time of Birth: {{ $info->tob }}</p>
+    <p class="font-weight-bold">City of Birth: {{ $info->cob }}</p>
+    <p class="font-weight-bold">Sub Caste: {{ $info->subcaste }}</p>
+    <p class="font-weight-bold">Gotra: {{ $info->gotra }}</p>
+    <p class="font-weight-bold">Are you Manglik: {{ $info->manglik }}</p>
+    <p class="font-weight-bold">Sun Sign: {{ $info->sun_sign }}</p>
+    </div>
+
+    <div class="my-5">
+    <h3 class="font-weight-bold">Contact Information</h3>
+    <p class="font-weight-bold">Email: {{ $info->email }}</p>
+    <p class="font-weight-bold">Mobile No: {{ $info->mobile_no }}</p>
+    </div>
+    
     @endforeach
     </div>
 @endsection

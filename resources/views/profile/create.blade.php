@@ -32,7 +32,7 @@
 
             <input name="city" type="text" id="currentCity" class="form-control mb-4" placeholder="Your Current City" required>
 
-            <select name="live_with_family" class="mdb-select form-control md-form" required>
+            <select name="living_with_family" class="mdb-select form-control md-form" required>
             <option value="" disabled selected>Do you live with your family?</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
@@ -63,7 +63,7 @@
             </div>
             <div class="col">
 
-            <select name="working_in" class="mdb-select form-control md-form" required>
+            <select name="working_for" class="mdb-select form-control md-form" required>
             <option value="" disabled selected>Job / Business</option>
             <option value="Goverment Sector">Goverment Sector</option>
             <option value="Private Sector">Private Sector</option>
@@ -72,7 +72,7 @@
             <option value="Not Working">Not Working</option>
             </select>
 
-            <select name="jobprofile" class="mdb-select form-control md-form">
+            <select name="working_as" class="mdb-select form-control md-form">
             <option value="" disabled selected>As</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
@@ -96,7 +96,7 @@
 
             <textarea name="bio" name="" id="" cols="30" rows="10" class="form-control mb-4" placeholder="Bio" required></textarea>
 
-            <input name="mobileno" type="text" class="form-control mb-4" placeholder="Mobile no" required>
+            <input name="mobile_no" type="text" class="form-control mb-4" placeholder="Mobile no" required>
 
             </div>
 
