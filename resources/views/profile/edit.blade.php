@@ -4,7 +4,8 @@
     @include('layouts.navbar')
     @foreach($data as $info)
     <div class="container   my-5 py-5">
-        <form action="" method="POST">
+        <form action="/profile/edit/update" method="POST">
+        @csrf
         @foreach($data as $info)
         <p class="h3 text-center mb-5">Basic Information</p>
             <div class="row">
@@ -19,39 +20,55 @@
                     </div>
                     <div class="form-group">
                     <label>Marital Status</label>
-                    <select name="marital_status" class="mdb-select form-control" required>
-                        <option value="{{$info->marital_status}}" disabled selected>{{$info->marital_status}}</option>
-                        <option value="Never Married">Never Married</option>
-                        <option value="Divorced">Divorced</option>
-                        <option value="Widowed / Widower">Widow / Widower</option>
+                    <select name="marital_status" class="mdb-select form-control">
+                        <option value="Never Married" {{ ($info->marital_status) == 'Never Married' ? 'selected' : '' }}>Never Married</option>
+                        <option value="Divorced" {{ ($info->marital_status) == 'Divorced' ? 'selected' : '' }}>Divorced</option>
+                        <option value="Widow / Widower" {{ ($info->marital_status) == 'Widow / Widower' ? 'selected' : '' }}>Widow / Widower</option>
                     </select>
+                    </div>
+                    <div class="form-group">
+                    <label>Do you live with your family?</label>
+                    <select name="living_with_family" class="mdb-select form-control"> 
+                    <option value="Yes"  {{ ($info->living_with_family)  == 'Yes' ? 'selected' : '' }}>Yes</option>
+                    <option value="No"  {{ ($info->living_with_family) == 'No' ? 'selected' : '' }}>No</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label>City</label>
+                    <input type="text" name="city" class="form-control" value="{{ $info->city }}">
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
                     <label>Height</label>
-                        <input name="height" type="text" class="form-control" value="" required>
+                        <input name="height" type="text" class="form-control" value="{{ $info->height }}">
                     </div>
                     <div class="form-group">
                     <label>Blood Group</label>
                         <select name="blood_group" id="" class="mdb-select form-control">
-                            <option value="{{ $info->blood_group }}" disabled selected>{{ $info->blood_group }}</option>
-                            <option value="A+">A+</option>
-                            <option value="B+">B+</option>
-                            <option value="O+">O+</option>
-                            <option value="O-">O-</option>
-                            <option value="A-">A-</option>
-                            <option value="B-">B-</option>
-                            <option value="AB+">AB+</option>
-                            <option value="AB-">AB-</option>
+                            <option value="A+" {{ ($info->blood_group) == 'A+' ? 'selected' : '' }}>A+</option>
+                            <option value="B+" {{ ($info->blood_group) == 'B+' ? 'selected' : '' }}>B+</option>
+                            <option value="O+" {{ ($info->blood_group) == 'O+' ? 'selected' : '' }}>O+</option>
+                            <option value="O-" {{ ($info->blood_group) == 'O-+' ? 'selected' : '' }}>O-</option>
+                            <option value="A-" {{ ($info->blood_group) == 'A-' ? 'selected' : '' }}>A-</option>
+                            <option value="B-" {{ ($info->blood_group) == 'B-' ? 'selected' : '' }}>B-</option>
+                            <option value="AB+" {{ ($info->blood_group) == 'AB+' ? 'selected' : '' }}>AB+</option>
+                            <option value="AB-" {{ ($info->blood_group) == 'AB-' ? 'selected' : '' }}>AB-</option>
                         </select>
                     </div>
                     <div class="form-group">
                     <label>Date of Birth</label>
                     <div class="md-outline input-with-post-icon datepicker">
-                    <input placeholder="Select date" type="date" id="example" class="form-control">
+                    <input name="dob" placeholder="Select date" type="date" id="example" class="form-control" value="{{ $info->dob }}">
                     </div>
                     </div>
+                    <div class="form-group">
+                    <label>Gender</label>
+                    <select name="gender" class="mdb-select form-control">
+                    <option value="Male" {{ ($info->gender) == 'Male' ? 'selected' : '' }}>Male</option>
+                    <option value="Female" {{ ($info->gender) == 'Female' ? 'selected' : '' }}>Female</option>
+                    </select>
+                        </div>
                 </div>
             </div>  
             <p class="h3 text-center my-5">Education and Career</p>
@@ -59,10 +76,9 @@
                 <div class="col">
                     <div class="form-group">
                     <label>Highest Qualification</label>
-                    <select name="highest_qualification" class="mdb-select form-control" required>
-                    <option value="{{ $info->highest_qualification }}" disabled selected>{{ $info->highest_qualification }}</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
+                    <select name="highest_qualification" class="mdb-select form-control">
+                    <option value="Yes" {{ ($info->highest_qualification) == 'Yes' ? 'selected' : '' }}>Yes</option>
+                    <option value="No" {{ ($info->highest_qualification) == 'No' ? 'selected' : '' }}>No</option>
                     </select>
                     </div>
                     <div class="form-group">
@@ -71,13 +87,12 @@
                     </div>
                     <div class="form-group">
                         <label>Working For</label>
-                        <select name="working_for" class="mdb-select form-control" required>
-                        <option value="{{ $info->working_for }}" disabled selected>{{ $info->working_for }}</option>
-                        <option value="Goverment Sector">Goverment Sector</option>
-                        <option value="Private Sector">Private Sector</option>
-                        <option value="Freelance">Freelance</option>
-                        <option value="Business">Business</option>
-                        <option value="Not Working">Not Working</option>
+                        <select name="working_for" class="mdb-select form-control">
+                        <option value="Goverment Sector" {{ ($info->working_for) == 'Goverment Sector' ? 'selected' : '' }}>Goverment Sector</option>
+                        <option value="Private Sector" {{ ($info->working_for) == 'Private Sector' ? 'selected' : '' }}>Private Sector</option>
+                        <option value="Freelance" {{ ($info->working_for) == 'Freelance' ? 'selected' : '' }}>Freelance</option>
+                        <option value="Business" {{ ($info->working_for) == 'Business' ? 'selected' : '' }}>Business</option>
+                        <option value="Not Working" {{ ($info->working_for) == 'Not Working' ? 'selected' : '' }}>Not Working</option>
                         
                         </select>
                     </div>
@@ -85,28 +100,26 @@
                 <div class="col">
                     <div class="form-group">
                     <label>Working As</label>
-                    <select name="working_as" class="mdb-select form-control" required> 
-                    <option value="{{ $info->working_as }}" disabled selected>{{ $info->working_as }}</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
+                    <select name="working_as" class="mdb-select form-control"> 
+                    <option value="Yes"  {{ ($info->working_as)  == 'Yes' ? 'selected' : '' }}>Yes</option>
+                    <option value="No"  {{ ($info->working_as) == 'No' ? 'selected' : '' }}>No</option>
                     </select>
                     </div>
                     <div class="form-group">
                         <label>Annual Income</label>
                         <select name="annual_income" class="mdb-select form-control">
-                        <option value="{{ $info->annual_income }}" disabled selected>{{ $info->annual_income }}</option>
-                        <option value="Upto Rs 1 Lakh Yearly">Upto Rs 1 Lakh Yearly</option> 
-                        <option value="Rs 1 to 2 Lakh Yearly">Rs 1 to 2 Lakh Yearly</option> 
-                        <option value="Rs 2 to 4 Lakh Yearly">Rs 2 to 4 Lakh Yearly</option> 
-                        <option value="Rs 4 to 7 Lakh Yearly">Rs 4 to 7 Lakh Yearly</option> 
-                        <option value="Rs 7 to 10 Lakh Yearly">Rs 7 to 10 Lakh Yearly</option> 
-                        <option value="Rs 10 to 15 Lakh Yearly">Rs 10 to 15 Lakh Yearly</option> 
-                        <option value="Rs 15 to 20 Lakh Yearly">Rs 15 to 20 Lakh Yearly</option> 
-                        <option value="Rs 20 to 30 Lakh Yearly">Rs 20 to 30 Lakh Yearly</option> 
-                        <option value="Rs 30 to 50 Lakh Yearly">Rs 30 to 50 Lakh Yearly</option> 
-                        <option value="Rs 50 to 75 Lakh Yearly">Rs 50 to 75 Lakh Yearly</option> 
-                        <option value="75 Lakh to 1 Crore Yearly">75 Lakh to 1 Crore Yearly</option> 
-                        <option value="1 Crore & Above Yearly">1 Crore & Above Yearly</option> 
+                        <option value="Upto Rs 1 Lakh Yearly" {{ ($info->annual_income) == 'Upto Rs 1 Lakh Yearly' ? 'selected' : '' }}>Upto Rs 1 Lakh Yearly</option> 
+                        <option value="Rs 1 to 2 Lakh Yearly" {{ ($info->annual_income) == 'Rs 1 to 2 Lakh Yearly' ? 'selected' : '' }}>Rs 1 to 2 Lakh Yearly</option> 
+                        <option value="Rs 2 to 4 Lakh Yearly" {{ ($info->annual_income) == 'Rs 2 to 4 Lakh Yearly' ? 'selected' : '' }}>Rs 2 to 4 Lakh Yearly</option> 
+                        <option value="Rs 4 to 7 Lakh Yearly" {{ ($info->annual_income) == 'Rs 4 to 7 Lakh Yearly' ? 'selected' : '' }}>Rs 4 to 7 Lakh Yearly</option> 
+                        <option value="Rs 7 to 10 Lakh Yearly" {{ ($info->annual_income) == 'Rs 7 to 10 Lakh Yearly' ? 'selected' : '' }}>Rs 7 to 10 Lakh Yearly</option> 
+                        <option value="Rs 10 to 15 Lakh Yearly" {{ ($info->annual_income) == 'Rs 10 to 15 Lakh Yearly' ? 'selected' : '' }}>Rs 10 to 15 Lakh Yearly</option> 
+                        <option value="Rs 15 to 20 Lakh Yearly" {{ ($info->annual_income) == 'Rs 15 to 20 Lakh Yearly' ? 'selected' : '' }}>Rs 15 to 20 Lakh Yearly</option> 
+                        <option value="Rs 20 to 30 Lakh Yearly" {{ ($info->annual_income) == 'Rs 20 to 30 Lakh Yearly' ? 'selected' : '' }}>Rs 20 to 30 Lakh Yearly</option> 
+                        <option value="Rs 30 to 50 Lakh Yearly" {{ ($info->annual_income) == 'Rs 30 to 50 Lakh Yearly' ? 'selected' : '' }}>Rs 30 to 50 Lakh Yearly</option> 
+                        <option value="Rs 50 to 75 Lakh Yearly" {{ ($info->annual_income) == 'Rs 50 to 75 Lakh Yearly' ? 'selected' : '' }}>Rs 50 to 75 Lakh Yearly</option> 
+                        <option value="75 Lakh to 1 Crore Yearly" {{ ($info->annual_income) == '75 Lakh to 1 Crore Yearly' ? 'selected' : '' }}>75 Lakh to 1 Crore Yearly</option> 
+                        <option value="1 Crore & Above Yearly" {{ ($info->annual_income) == '1 Crore & Above Yearly' ? 'selected' : '' }}>1 Crore & Above Yearly</option> 
                         </select>
                     </div>
                 </div>
@@ -120,7 +133,7 @@
                 </div>
                 <div class="form-group">
                 <label>Mother's Name</label>
-                <input type="text" name="mother_name" class="form-control" value="{{ $info->father_name }}">
+                <input type="text" name="mother_name" class="form-control" value="{{ $info->motherf_name }}">
                 </div>
                 <div class="form-group">
                 <label>No of Brothers</label>
@@ -160,10 +173,9 @@
             <div class="form-group">
                 <label>Sub-Caste</label>
                 <select name="subcaste" class="mdb-select form-control">
-            <option value="{{ $info->subcaste }}" disabled selected>{{ $info->subcaste }}</option>
-            <option value="Ahir">Ahir</option>
-            <option value="Lad">Lad</option>
-            <option value="Other">Other</option>
+            <option value="Ahir" {{ ($info->subcaste) == 'Ahir' ? 'selected' : '' }}>Ahir</option>
+            <option value="Lad" {{ ($info->subcaste) == 'Lad' ? 'selected' : '' }}>Lad</option>
+            <option value="Other" {{ ($info->subcaste) == 'Other' ? 'selected' : '' }}>Other</option>
             </select>
             </div>
             </div>
@@ -175,27 +187,25 @@
             <div class="form-group">
                 <label>Are you Manglik</label>
                 <select name="manglik" class="mdb-select form-control">
-                <option value="{{ $info->manglik }}" disabled selected>{{ $info->manglik }}</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
+                <option value="Yes" {{ ($info->manglik) == 'Yes' ? 'selected' : '' }}>Yes</option>
+                <option value="No" {{ ($info->manglik) == 'No' ? 'selected' : '' }}>No</option>
             </select>
             </div>
             <div class="form-group">
                 <label>Sun Sign</label>
                 <select name="sun_sign" class="mdb-select form-control">
-                <option value="{{ $info->sun_sign }}" disabled selected>{{ $info->sun_sign }}</option>
-                <option value="Aries">Aries</option>
-                <option value="Taurus">Taurus</option>
-                <option value="Gemini">Gemini</option>
-                <option value="Cancer">Cancer</option>
-                <option value="Leo">Leo</option>
-                <option value="Virgo">Virgo</option>
-                <option value="Libra">Libra</option>
-                <option value="Scorpio">Scorpio</option>
-                <option value="Sagittarius">Sagittarius</option>
-                <option value="Capricorn">Capricorn</option>
-                <option value="Aquarius">Aquarius</option>
-                <option value="Pisces">Pisces</option>
+                <option value="Aries" {{ ($info->sun_sign) == 'Aries' ? 'selected' : '' }}>Aries</option>
+                <option value="Taurus" {{ ($info->sun_sign) == 'Taurus' ? 'selected' : '' }}>Taurus</option>
+                <option value="Gemini" {{ ($info->sun_sign) == 'Gemini' ? 'selected' : '' }}>Gemini</option>
+                <option value="Cancer" {{ ($info->sun_sign) == 'Cancer' ? 'selected' : '' }}>Cancer</option>
+                <option value="Leo" {{ ($info->sun_sign) == 'Leo' ? 'selected' : '' }}>Leo</option>
+                <option value="Virgo" {{ ($info->sun_sign) == 'Virgo' ? 'selected' : '' }}>Virgo</option>
+                <option value="Libra" {{ ($info->sun_sign) == 'Libra' ? 'selected' : '' }}>Libra</option>
+                <option value="Scorpio" {{ ($info->sun_sign) == 'Scorpio' ? 'selected' : '' }}>Scorpio</option>
+                <option value="Sagittarius" {{ ($info->sun_sign) == 'Sagittarius' ? 'selected' : '' }}>Sagittarius</option>
+                <option value="Capricorn" {{ ($info->sun_sign) == 'Capricorn' ? 'selected' : '' }}>Capricorn</option>
+                <option value="Aquarius" {{ ($info->sun_sign) == 'Aquarius' ? 'selected' : '' }}>Aquarius</option>
+                <option value="Pisces" {{ ($info->sun_sign) == 'Pisces' ? 'selected' : '' }}>Pisces</option>
                 </select>
             </div>
             </div>

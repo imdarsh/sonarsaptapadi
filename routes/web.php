@@ -25,3 +25,4 @@ Route::get('/profile',[App\Http\Controllers\ProfileController::class, 'index']);
 Route::get('/create-profile',[App\Http\Controllers\ProfileController::class, 'show']);
 Route::post('/create-profile',[App\Http\Controllers\ProfileController::class, 'create']);
 Route::get('/profile/edit/{id}', [App\Http\Controllers\ProfileController::class, 'edit']);
+Route::post('/profile/edit/update',[App\Http\Controllers\ProfileController::class, 'update']);

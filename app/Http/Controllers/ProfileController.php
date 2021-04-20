@@ -29,7 +29,7 @@ class ProfileController extends Controller
         }
         else if($profile->profile_for == 'Daughter' || $profile->profile_for == 'Sister')
         {
-            $profile->profile_for = 'Female';            
+            $profile->gender = 'Female';            
         }
         else {
             $profile->gender = $request->input('gender');
@@ -64,6 +64,41 @@ class ProfileController extends Controller
         return view('profile.edit')->with('data',$data);
     }
 
-    
+    public function update(Request $request)
+    {
+        $id = auth()->id();
+        $data = User::find($id);
+        $data->name = $request->input('name');
+        $data->age = $request->input('age');
+        $data->marital_status = $request->input('marital_status');
+        $data->living_with_family = $request->input('living_with_family');
+        $data->city = $request->input('city');
+        $data->gender = $request->input('gender');
+        $data->height = $request->input('height');
+        $data->blood_group = $request->input('blood_group');
+        $data->dob = $request->input('dob');
+        $data->highest_qualification = $request->input('highest_qualification');
+        $data->college_attended = $request->input('college_attended');
+        $data->working_for = $request->input('working_for');
+        $data->working_as = $request->input('working_as');
+        $data->annual_income = $request->input('annual_income');
+        $data->father_name = $request->input('father_name');
+        $data->mother_name = $request->input('mother_name');
+        $data->no_of_brothers = $request->input('no_of_brothers');
+        $data->no_of_sisters = $request->input('no_of_sisters');
+        $data->native_place = $request->input('native_place');
+        $data->father_occupation = $request->input('father_occupation');
+        $data->mother_tongue = $request->input('mother_tongue');
+        $data->tob = $request->input('tob');
+        $data->cob = $request->input('cob');
+        $data->subcaste = $request->input('subcaste');
+        $data->gotra = $request->input('gotra');
+        $data->manglik = $request->input('manglik');
+        $data->sun_sign = $request->input('sun_sign');
+        $data->email = $request->input('email');
+        $data->mobile_no = $request->input('mobile_no');
+        $data->update();
+        return redirect('/profile');
+    }
 
 }
