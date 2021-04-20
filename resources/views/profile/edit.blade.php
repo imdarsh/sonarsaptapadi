@@ -147,14 +147,76 @@
             </div>
             </div>
             <p class="h3 text-center">Astro Details</p>
+            <div class="row">
+            <div class="col">
             <div class="form-group">
                 <label>Time of Birth</label>
-                <div class="md-form md-outline input-with-post-icon timepicker" twelvehour="true">
-  <input type="text" id="twelve-hour-clock" class="form-control" placeholder="Select time">
-  <label for="twelve-hour-clock">Twelve hour clock</label>
-  <i class="fas fa-envelope input-prefix"></i>
-</div>
+                <input type="time" id="default-picker" class="form-control" placeholder="Select time" name="tob" value="{{ $info->tob }}">
             </div>
+            <div class="form-group">
+                <label>City of Birth</label>
+                <input type="text" name="cob" class="form-control" value="{{ $info->cob }}">
+            </div>
+            <div class="form-group">
+                <label>Sub-Caste</label>
+                <select name="subcaste" class="mdb-select form-control">
+            <option value="{{ $info->subcaste }}" disabled selected>{{ $info->subcaste }}</option>
+            <option value="Ahir">Ahir</option>
+            <option value="Lad">Lad</option>
+            <option value="Other">Other</option>
+            </select>
+            </div>
+            </div>
+            <div class="col">
+            <div class="form-group">
+                <label>Gotra</label>
+                <input type="text" name="gotra" class="form-control" value="{{ $info->gotra }}">
+            </div>
+            <div class="form-group">
+                <label>Are you Manglik</label>
+                <select name="manglik" class="mdb-select form-control">
+                <option value="{{ $info->manglik }}" disabled selected>{{ $info->manglik }}</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            </div>
+            <div class="form-group">
+                <label>Sun Sign</label>
+                <select name="sun_sign" class="mdb-select form-control">
+                <option value="{{ $info->sun_sign }}" disabled selected>{{ $info->sun_sign }}</option>
+                <option value="Aries">Aries</option>
+                <option value="Taurus">Taurus</option>
+                <option value="Gemini">Gemini</option>
+                <option value="Cancer">Cancer</option>
+                <option value="Leo">Leo</option>
+                <option value="Virgo">Virgo</option>
+                <option value="Libra">Libra</option>
+                <option value="Scorpio">Scorpio</option>
+                <option value="Sagittarius">Sagittarius</option>
+                <option value="Capricorn">Capricorn</option>
+                <option value="Aquarius">Aquarius</option>
+                <option value="Pisces">Pisces</option>
+                </select>
+            </div>
+            </div>
+            </div>
+            <p class="h3 text-center">Contact Information</p>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control" value="{{ $info->email }}" required>
+                    </div>
+                    <div class="form-group">
+                    <label>Mobile No</label>
+                    <input type="text" name="mobile_no" class="form-control" value="{{ $info->mobile_no }}" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <button class="btn btn-primary btn-rounded" type="submit">Update Profile</button>
+            </div>
+
             @endforeach
         </form>
     <!-- </section> -->
