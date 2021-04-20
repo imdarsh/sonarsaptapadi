@@ -1,0 +1,11 @@
+.file-input{
+    position: absolute;
+    z-index: -1;
+    top: 10px;
+    left: 8px;
+    font-size: 17px;
+    color: #b8b8b8;
+  }
+  .button-wrap {
+    position: relative;
+  }

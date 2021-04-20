@@ -7,9 +7,17 @@
     <section class="text-center px-md-5 mx-md-5 dark-grey-text">
     <div class="row mb-5">
       <div class="col-md-4 mx-auto">
+        <div class="file-field">
         <div class="mb-4 pb-2">
           <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="z-depth-1 rounded-circle img-fluid mx-auto" alt="smaple image">
         </div>
+    <div class="d-flex justify-content-center">
+      <div class="btn btn-primary btn-rounded float-left">
+        <span>Add photo</span>
+        <input type="file" class="file-input">
+      </div>
+    </div>
+  </div>
         <!-- <a href="profile/edit/{{ $info->id }}" class="btn btn-primary btn-rounded">Update Profile</a> -->
         <a href="profile/edit/{{ $info->id }}" class="btn btn-primary btn-rounded">Update Profile</a>
         <ul class="list-unstyled d-flex justify-content-center mt-3 mb-0 red-text">
