@@ -46,6 +46,12 @@
                             <option value="AB-">AB-</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                    <label>Date of Birth</label>
+                    <div class="md-outline input-with-post-icon datepicker">
+                    <input placeholder="Select date" type="date" id="example" class="form-control">
+                    </div>
+                    </div>
                 </div>
             </div>  
             <p class="h3 text-center my-5">Education and Career</p>
@@ -54,46 +60,35 @@
                     <div class="form-group">
                     <label>Highest Qualification</label>
                     <select name="highest_qualification" class="mdb-select form-control" required>
-                    @if($info->highest_qualification)
-                    <option value="{{ $info->highest_qualification }}">{{ $info->highest_qualification }}</option>
-                    @else
-                    <option value="" disabled selected>Highest Qualification</option>
+                    <option value="{{ $info->highest_qualification }}" disabled selected>{{ $info->highest_qualification }}</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
-                    @endif
                     </select>
                     </div>
                     <div class="form-group">
                         <label>College Attended</label>
-                        <input type="text" name="college_attended" class="form-control">
+                        <input type="text" name="college_attended" class="form-control" value="{{ $info->college_attended }}">
                     </div>
                     <div class="form-group">
                         <label>Working For</label>
                         <select name="working_for" class="mdb-select form-control" required>
-                        @if($info->working_for)
-                        <option value="{{ $info->working_for }}">{{ $info->working_for }}</option>
-                        @else
-                        <option value="" disabled selected>Job / Business</option>
+                        <option value="{{ $info->working_for }}" disabled selected>{{ $info->working_for }}</option>
                         <option value="Goverment Sector">Goverment Sector</option>
                         <option value="Private Sector">Private Sector</option>
                         <option value="Freelance">Freelance</option>
                         <option value="Business">Business</option>
                         <option value="Not Working">Not Working</option>
-                        @endif
+                        
                         </select>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
                     <label>Working As</label>
-                    <select name="working_as" class="mdb-select form-control" required>
-                    @if($info->working_as)
-                    <option value="{{ $info->working_as }}">{{ $info->working_as }}</option>
-                    @else
-                    <option value="" disabled selected>As</option>
+                    <select name="working_as" class="mdb-select form-control" required> 
+                    <option value="{{ $info->working_as }}" disabled selected>{{ $info->working_as }}</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
-                    @endif
                     </select>
                     </div>
                     <div class="form-group">
@@ -116,6 +111,50 @@
                     </div>
                 </div>
             </div>  
+            <p class="h3 text-center">Family Details</p>
+            <div class="row">
+                <div class="col">
+                <div class="form-group">
+                <label>Father's Name</label>
+                <input type="text" name="father_name" class="form-control" value="{{ $info->father_name }}">
+                </div>
+                <div class="form-group">
+                <label>Mother's Name</label>
+                <input type="text" name="mother_name" class="form-control" value="{{ $info->father_name }}">
+                </div>
+                <div class="form-group">
+                <label>No of Brothers</label>
+                <input type="text" name="no_of_brothers" class="form-control" value="{{ $info->no_of_brothers }}">
+                </div>
+                <div class="form-group">
+                <label>No of Sisters</label>
+                <input type="text" name="no_of_sisters" class="form-control" value="{{ $info->no_of_sisters }}">
+                </div>
+                </div>
+            <div class="col">
+            <div class="form-group">
+                <label>Native Place</label>
+                <input type="text" name="native_place" class="form-control" value="{{ $info->native_place }}">
+                </div>
+                <div class="form-group">
+                <label>Father's Occupation</label>
+                <input type="text" name="father_occupation" class="form-control" value="{{ $info->father_occupation }}">
+                </div>
+                <div class="form-group">
+                <label>Mother Tongue</label>
+                <input type="text" name="mother_tongue" class="form-control" value="{{ $info->mother_tongue }}">
+                </div>
+            </div>
+            </div>
+            <p class="h3 text-center">Astro Details</p>
+            <div class="form-group">
+                <label>Time of Birth</label>
+                <div class="md-form md-outline input-with-post-icon timepicker" twelvehour="true">
+  <input type="text" id="twelve-hour-clock" class="form-control" placeholder="Select time">
+  <label for="twelve-hour-clock">Twelve hour clock</label>
+  <i class="fas fa-envelope input-prefix"></i>
+</div>
+            </div>
             @endforeach
         </form>
     <!-- </section> -->
