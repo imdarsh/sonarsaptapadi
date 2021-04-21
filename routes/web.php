@@ -26,3 +26,4 @@ Route::get('/create-profile',[App\Http\Controllers\ProfileController::class, 'sh
 Route::post('/create-profile',[App\Http\Controllers\ProfileController::class, 'create']);
 Route::get('/profile/edit/{id}', [App\Http\Controllers\ProfileController::class, 'edit']);
 Route::post('/profile/edit/update',[App\Http\Controllers\ProfileController::class, 'update']);
+Route::get('/search', [App\Http\Controllers\SearchController::class, 'search']);

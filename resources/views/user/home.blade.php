@@ -72,7 +72,41 @@
 </header>    -->
 
 @include('layouts.navbar')
-
+<div class="container my-5">
+  <div class="card">
+    <div class="card-body">
+    <form action="/search" method="GET">
+    <div class="row">
+      <div class="col">
+        <select name="gender" class="mdb-form form-control">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        </select>
+      </div>
+      <div class="col">
+        <input type="text" name="city" placeholder="City" class="form-control" required>
+      </div>
+      <div class="col">
+        <input type="text" name="age_min" placeholder="Minimum Age" class="form-control" required>
+      </div>
+      <div class="col">
+        <input type="text" name="age_max" placeholder="Maximum Age" class="form-control" required>
+      </div>
+      <div class="col">
+        <select name="subcaste" placeholder="Sub-Caste" class="mdb-form form-control">
+        <option value="Ahir">Ahir</option>
+        <option value="Lad">Lad</option>
+        <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </div>
+    </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <main>
 <!-- Services -->
