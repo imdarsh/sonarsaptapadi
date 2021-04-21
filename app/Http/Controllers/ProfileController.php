@@ -101,4 +101,24 @@ class ProfileController extends Controller
         return redirect('/profile');
     }
 
+    public function uploadimage(Request $request)
+    {   
+        $id = auth()->id();
+        $upload = User::find($id);
+        if ($request->hasFile('image')) {
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore = $filename. '_'. time().'.'.$extension;
+            $variable->image = $fileNameToStore;
+            $path = $request->file('image')->storeAs('image', $fileNameToStore, 'public');
+            $upload->image = $path;
+            $upload->save();
+            }
+            else {
+            $fileNameToStore = 'noimage.jpg';
+            }
+            return redirect('profile.show');
+    }
+
 }

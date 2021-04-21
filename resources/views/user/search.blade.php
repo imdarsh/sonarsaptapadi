@@ -18,7 +18,7 @@
     <h6 class="font-weight-bold grey-text mb-3">{{ $result->working_for }}</h6>
     <h6 class="font-weight-bold grey-text mb-3">{{ $result->city }}</h6>
     <p class="grey-text">{{ $result->bio }}</p>
-  
+    <button class="btn-success btn">Send Connection</button>
   </div>
 </div>
 <!-- Grid column -->
