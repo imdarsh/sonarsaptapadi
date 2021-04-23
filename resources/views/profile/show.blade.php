@@ -9,18 +9,17 @@
       <div class="col-md-4 mx-auto">
         <div class="file-field">
         <div class="mb-4 pb-2">
-          <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="z-depth-1 rounded-circle img-fluid mx-auto" alt="smaple image">
+          <img src="{{ url('storage/image/'.$info->image) }}" class="z-depth-1 rounded-circle img-fluid mx-auto" alt="smaple image">
         </div>
-    <form action="/profile/uploadimage" method="POST" enctype="multipart/form-data">
-    <div class="d-flex justify-content-center">
-      <div class="btn btn-primary btn-rounded float-left">
-        <span>Add photo</span>
-        <input type="file" name="image" class="file-input">
-        <button type="submit">upload</button>
-      </div>
-    </div>
-    </form>
-  </div>
+        <div class="justify-content-center">
+          <form action="/profile/uploadimage" method="POST" enctype="multipart/form-data">
+          @csrf
+          <div class="form-group">
+            <input type="file" name="image" class="form-control">
+            <button class="btn btn-primary">Upload</button>
+          </div>
+          </form>
+        </div>
         <!-- <a href="profile/edit/{{ $info->id }}" class="btn btn-primary btn-rounded">Update Profile</a> -->
         <a href="profile/edit/{{ $info->id }}" class="btn btn-primary btn-rounded">Update Profile</a>
         <ul class="list-unstyled d-flex justify-content-center mt-3 mb-0 red-text">

@@ -27,4 +27,4 @@ Route::post('/create-profile',[App\Http\Controllers\ProfileController::class, 'c
 Route::get('/profile/edit/{id}', [App\Http\Controllers\ProfileController::class, 'edit']);
 Route::post('/profile/edit/update',[App\Http\Controllers\ProfileController::class, 'update']);
 Route::get('/search', [App\Http\Controllers\SearchController::class, 'search']);
-Route::post('/profile/uploadimage',[App\Http\Controllers\ProfileController::class,'uploadimage']);
+Route::post('/profile/uploadimage', [App\Http\Controllers\ProfileController::class, 'uploadimage']);
