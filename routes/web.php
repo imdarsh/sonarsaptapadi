@@ -28,3 +28,6 @@ Route::get('/profile/edit/{id}', [App\Http\Controllers\ProfileController::class,
 Route::post('/profile/edit/update',[App\Http\Controllers\ProfileController::class, 'update']);
 Route::get('/search', [App\Http\Controllers\SearchController::class, 'search']);
 Route::post('/profile/uploadimage', [App\Http\Controllers\ProfileController::class, 'uploadimage']);
+Route::get('/sendconnection/{id}', [App\Http\Controllers\ConnectionController::class, 'sendconnection']);
+Route::get('/sentconnection', [App\Http\Controllers\ConnectionController::class, 'sentconnection']);
+Route::get('/receivedconnection', [App\Http\Controllers\ConnectionController::class, 'receivedconnection']);
