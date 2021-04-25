@@ -42,4 +42,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    function getConnection()
+    {
+        return $this->hasMany('App\Models\Connection');
+    }
 }

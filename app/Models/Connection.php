@@ -14,4 +14,9 @@ class Connection extends Model
         'party2',
         'match'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }

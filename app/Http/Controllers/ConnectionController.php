@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Connection;
+use App\Models\User;
 
 class ConnectionController extends Controller
 {
@@ -22,14 +23,12 @@ class ConnectionController extends Controller
 
     public function sentconnection()
     {
-        $id = auth()->id();
-        $data = Connection::where('party1',$id)->get();
-        return view('profile.sentconnection',)->with('data',$data);
+
     }
 
     public function receivedconnection()
     {
-        return view('profile.receivedconnection');
+
     }
 
     public function matchedconnection()
