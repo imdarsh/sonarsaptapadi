@@ -19,6 +19,8 @@ class CreateConnectionsTable extends Migration
             $table->string('party2');
             $table->boolean('match')->nullable();
             $table->timestamps();
+            $table->foreign('party1')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('party2')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

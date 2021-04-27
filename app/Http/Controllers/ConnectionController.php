@@ -29,13 +29,13 @@ class ConnectionController extends Controller
     public function receivedconnection()
     {
         $id = auth()->id();
-        $data = Connection::find($id)->connection;
-        // dd($data);
+        $data = User::find('b4539416-f09b-453b-a74c-ad1c0a2bb074')->connection('party2');
+        dd($data);
         // foreach($data as $info)
         // {
         //     $data2 = User::where('id',$info->party1)->get();
         // }
-        return view('profile.receivedconnection')->with('data',$data);
+        // return view('profile.receivedconnection')->with('data',$data);
     }
 
     public function matchedconnection()
