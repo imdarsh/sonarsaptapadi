@@ -15,8 +15,8 @@ class Connection extends Model
         'match'
     ];
 
-    public function user()
+    public function getuser()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo(User::class);
     }
 }

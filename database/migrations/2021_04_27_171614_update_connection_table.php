@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddImageToUserTable extends Migration
+class UpdateConnectionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddImageToUserTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('connections', function (Blueprint $table) {
             //
-            $table->string('image')->nullable();
+            $table->foreign('party1','party2')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -26,9 +26,10 @@ class AddImageToUserTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('connections', function (Blueprint $table) {
             //
-            $table->dropColumn('image');
+            $table->dropForeign('party1');
+            $table->dropForeign('party2');
         });
     }
 }

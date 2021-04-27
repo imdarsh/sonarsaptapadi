@@ -43,8 +43,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    function getConnection()
+    function connection()
     {
-        return $this->hasMany('App\Models\Connection');
+        return $this->hasMany(Connection::class);
     }
 }
