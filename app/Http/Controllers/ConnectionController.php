@@ -23,7 +23,10 @@ class ConnectionController extends Controller
 
     public function sentconnection()
     {
-
+        $id = auth()->id();
+        $data = Connection::where('party1',$id)->get('party2');
+        $user = User::find($data);
+        return view('profile.sentconnection')->with('user',$user);
     }
 
     public function receivedconnection()
