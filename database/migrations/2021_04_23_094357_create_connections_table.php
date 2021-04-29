@@ -15,12 +15,12 @@ class CreateConnectionsTable extends Migration
     {
         Schema::create('connections', function (Blueprint $table) {
             $table->id();
-            $table->string('party1');
-            $table->string('party2');
-            $table->boolean('match')->nullable();
+            $table->string('uid1');
+            $table->string('uid2');
+            $table->integer('status');
+            $table->foreign('uid1')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('uid2')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
-            $table->foreign('party1')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('party2')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

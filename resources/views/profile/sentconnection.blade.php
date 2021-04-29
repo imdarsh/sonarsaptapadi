@@ -19,7 +19,6 @@
     <h6 class="font-weight-bold grey-text mb-3">{{ $info->working_for }}</h6>
     <h6 class="font-weight-bold grey-text mb-3">{{ $info->city }}</h6>
     <p class="grey-text">{{ $info->bio }}</p>
-    <a class="btn-success btn" href="/sendconnection/{{ $info->id }}">Accept Connection</a>
   </div>
 </div>
 <!-- Grid column -->
