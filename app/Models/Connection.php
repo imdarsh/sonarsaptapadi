@@ -10,9 +10,9 @@ class Connection extends Model
     use HasFactory;
 
     protected $fillable = [
-        'party1',
-        'party2',
-        'match'
+        'uid1',
+        'uid2',
+        'status'
     ];
 
     public function users()

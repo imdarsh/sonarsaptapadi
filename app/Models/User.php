@@ -45,6 +45,6 @@ class User extends Authenticatable
 
     function connections()
     {
-        return $this->hasMany(Connection::class,'foreign_key');
+        return $this->hasOne(Connection::class,'uid1','uid2');
     }
 }

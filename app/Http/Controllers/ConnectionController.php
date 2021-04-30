@@ -11,14 +11,20 @@ class ConnectionController extends Controller
     //
     public function sendconnection($id)
     {
-        $match = 0;
+        $status = 0;
         $ids = auth()->id();
-        $send = new Connection;
-        $send->party1 = $ids;
-        $send->party2 = $id;
-        $send->match = $match;
-        $send->save();
-        return redirect()->back();
+        $conn = Connection::where('uid1',$ids)->orWhere('uid1',$ids)->where('uid2',$id)->orWhere('uid2',$id)->get();
+        if($conn == '')
+        {
+            $send = new Connection;
+            $send->uid1 = $ids;
+            $send->uid2 = $id;
+            $send->status = $status;
+            $send->save();
+            return redirect()->back();
+        }
+        
+        // dd($conn);
     }
 
     public function sentconnection()
