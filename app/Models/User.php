@@ -43,8 +43,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    function connections()
-    {
-        return $this->hasOne(Connection::class,'uid1','uid2');
+    public function friends() {
+        return $this->hasMany(Connection::class);
     }
+    public function isFriend(User $user) {
+        if ($this->friends()->where('uid2', $user->id)->first()){
+            return  true;
+        } 
+        return false;
+    }
+
 }

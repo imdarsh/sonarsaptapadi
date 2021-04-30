@@ -13,8 +13,9 @@ class ConnectionController extends Controller
     {
         $status = 0;
         $ids = auth()->id();
-        $conn = Connection::where('uid1',$ids)->orWhere('uid1',$ids)->where('uid2',$id)->orWhere('uid2',$id)->get();
-        if($conn == '')
+        $conn1 = Connection::where('uid1',$ids)->where('uid2',$id)->get('id')->first();
+        $conn2 = Connection::where('uid2',$ids)->where('uid1',$id)->get('id')->first();
+        if($conn1 == '' and $conn2 == '')
         {
             $send = new Connection;
             $send->uid1 = $ids;
@@ -23,8 +24,11 @@ class ConnectionController extends Controller
             $send->save();
             return redirect()->back();
         }
+        else{
+            return redirect()->back();
+        }
         
-        // dd($conn);
+        // dd($conn1,$conn2);
     }
 
     public function sentconnection()

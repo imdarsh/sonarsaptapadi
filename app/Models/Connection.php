@@ -15,8 +15,15 @@ class Connection extends Model
         'status'
     ];
 
-    public function users()
-    {
-        return $this->belongsTo('App\Models\User','id');
+    public function friend() {
+        return $this->hasOne(User::class, 'uid2', 'id');
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function getUser() {
+        return $this->user();
     }
 }
