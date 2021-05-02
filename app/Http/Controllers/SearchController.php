@@ -20,6 +20,7 @@ class SearchController extends Controller
         $results = User::where('gender',$gender)->where('city','like','%'.$city.'%')->whereBetween('age',[$age_min-1,$age_max])->where('subcaste',$subcaste)->get();
         
         return view('user.search', ['results' => $results]);
+        
         // dd($results);
     }
 }

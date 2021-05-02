@@ -54,7 +54,6 @@ class ConnectionController extends Controller
         $conn->status = 1;
         $conn->update();
         return redirect()->back()->with('success','Connection Accepted Successfully');
-        dd($conn);
     }
 
     public function matchedconnection()

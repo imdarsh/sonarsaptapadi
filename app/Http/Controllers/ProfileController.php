@@ -110,7 +110,6 @@ class ProfileController extends Controller
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('image')->getClientOriginalExtension();
             $fileNameToStore = $id. '_'. time().'.'.$extension;
-            // $variable->image = $fileNameToStore;
             $path = $request->file('image')->storeAs('image', $fileNameToStore, 'public');
             $upload->image = $fileNameToStore;
             $upload->save();
