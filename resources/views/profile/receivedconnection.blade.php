@@ -3,6 +3,7 @@
 @include('layouts.navbar')
     <p class="h3 text-center my-5">Received Connection</p>
     <div class="container my-5">
+    @include('layouts.message')
 <div class="row text-center text-md-left">
     @foreach($user as $info)
 <!-- Grid column -->
@@ -18,7 +19,7 @@
     <h6 class="font-weight-bold grey-text mb-3">{{ $info->working_for }}</h6>
     <h6 class="font-weight-bold grey-text mb-3">{{ $info->city }}</h6>
     <p class="grey-text">{{ $info->bio }}</p>
-    <a class="btn-success btn" href="/receiveconnection/{{ $info->id }}">Accept Connection</a>
+    <a class="btn-success btn" href="/acceptconnection/{{ $info->id }}">Accept Connection</a>
   </div>
 </div>
 <!-- Grid column -->

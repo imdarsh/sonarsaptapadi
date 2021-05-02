@@ -22,10 +22,10 @@ class ConnectionController extends Controller
             $send->uid2 = $id;
             $send->status = $status;
             $send->save();
-            return redirect()->back();
+            return redirect()->back()->with('success','Connection Sent Successfully');
         }
         else{
-            return redirect()->back();
+            return redirect()->back()->with('exists','Connection Already Sent');
         }
         
         // dd($conn1,$conn2);
@@ -34,7 +34,7 @@ class ConnectionController extends Controller
     public function sentconnection()
     {
         $id = auth()->id();
-        $data = Connection::where('party1',$id)->get('party2','match');
+        $data = Connection::where('uid1',$id)->where('status',0)->get('uid2','status');
         $user = User::find($data);
         return view('profile.sentconnection')->with('user',$user);
     }
@@ -42,9 +42,19 @@ class ConnectionController extends Controller
     public function receivedconnection()
     {
         $id = auth()->id();
-        $data = Connection::where('party2',$id)->get('party1');
+        $data = Connection::where('uid2',$id)->where('status',0)->get('uid1','status');
         $user = User::find($data);
         return view('profile.receivedconnection')->with('user',$user);
+    }
+
+    public function acceptconnection($id)
+    {
+        $ids = auth()->id();
+        $conn = Connection::where('uid1',$id)->where('uid2',$ids)->where('status',0)->first();
+        $conn->status = 1;
+        $conn->update();
+        return redirect()->back()->with('success','Connection Accepted Successfully');
+        dd($conn);
     }
 
     public function matchedconnection()

@@ -21,6 +21,7 @@
                     <div class="form-group">
                     <label>Marital Status</label>
                     <select name="marital_status" class="mdb-select form-control">
+                        <option value=""></option>
                         <option value="Never Married" {{ ($info->marital_status) == 'Never Married' ? 'selected' : '' }}>Never Married</option>
                         <option value="Divorced" {{ ($info->marital_status) == 'Divorced' ? 'selected' : '' }}>Divorced</option>
                         <option value="Widow / Widower" {{ ($info->marital_status) == 'Widow / Widower' ? 'selected' : '' }}>Widow / Widower</option>
@@ -29,6 +30,7 @@
                     <div class="form-group">
                     <label>Do you live with your family?</label>
                     <select name="living_with_family" class="mdb-select form-control"> 
+                    <option value=""></option>
                     <option value="Yes"  {{ ($info->living_with_family)  == 'Yes' ? 'selected' : '' }}>Yes</option>
                     <option value="No"  {{ ($info->living_with_family) == 'No' ? 'selected' : '' }}>No</option>
                     </select>
@@ -46,6 +48,7 @@
                     <div class="form-group">
                     <label>Blood Group</label>
                         <select name="blood_group" id="" class="mdb-select form-control">
+                            <option value=""></option>
                             <option value="A+" {{ ($info->blood_group) == 'A+' ? 'selected' : '' }}>A+</option>
                             <option value="B+" {{ ($info->blood_group) == 'B+' ? 'selected' : '' }}>B+</option>
                             <option value="O+" {{ ($info->blood_group) == 'O+' ? 'selected' : '' }}>O+</option>
@@ -65,6 +68,7 @@
                     <div class="form-group">
                     <label>Gender</label>
                     <select name="gender" class="mdb-select form-control">
+                    <option value=""></option>
                     <option value="Male" {{ ($info->gender) == 'Male' ? 'selected' : '' }}>Male</option>
                     <option value="Female" {{ ($info->gender) == 'Female' ? 'selected' : '' }}>Female</option>
                     </select>
@@ -77,6 +81,7 @@
                     <div class="form-group">
                     <label>Highest Qualification</label>
                     <select name="highest_qualification" class="mdb-select form-control">
+                    <option value=""></option>
                     <option value="Yes" {{ ($info->highest_qualification) == 'Yes' ? 'selected' : '' }}>Yes</option>
                     <option value="No" {{ ($info->highest_qualification) == 'No' ? 'selected' : '' }}>No</option>
                     </select>
@@ -108,6 +113,7 @@
                     <div class="form-group">
                         <label>Annual Income</label>
                         <select name="annual_income" class="mdb-select form-control">
+                        <option value=""></option>
                         <option value="Upto Rs 1 Lakh Yearly" {{ ($info->annual_income) == 'Upto Rs 1 Lakh Yearly' ? 'selected' : '' }}>Upto Rs 1 Lakh Yearly</option> 
                         <option value="Rs 1 to 2 Lakh Yearly" {{ ($info->annual_income) == 'Rs 1 to 2 Lakh Yearly' ? 'selected' : '' }}>Rs 1 to 2 Lakh Yearly</option> 
                         <option value="Rs 2 to 4 Lakh Yearly" {{ ($info->annual_income) == 'Rs 2 to 4 Lakh Yearly' ? 'selected' : '' }}>Rs 2 to 4 Lakh Yearly</option> 
@@ -173,6 +179,7 @@
             <div class="form-group">
                 <label>Sub-Caste</label>
                 <select name="subcaste" class="mdb-select form-control">
+                <option value=""></option>
             <option value="Ahir" {{ ($info->subcaste) == 'Ahir' ? 'selected' : '' }}>Ahir</option>
             <option value="Lad" {{ ($info->subcaste) == 'Lad' ? 'selected' : '' }}>Lad</option>
             <option value="Other" {{ ($info->subcaste) == 'Other' ? 'selected' : '' }}>Other</option>
@@ -187,6 +194,7 @@
             <div class="form-group">
                 <label>Are you Manglik</label>
                 <select name="manglik" class="mdb-select form-control">
+                <option value=""></option>
                 <option value="Yes" {{ ($info->manglik) == 'Yes' ? 'selected' : '' }}>Yes</option>
                 <option value="No" {{ ($info->manglik) == 'No' ? 'selected' : '' }}>No</option>
             </select>
@@ -194,6 +202,7 @@
             <div class="form-group">
                 <label>Sun Sign</label>
                 <select name="sun_sign" class="mdb-select form-control">
+                <option value=""></option>
                 <option value="Aries" {{ ($info->sun_sign) == 'Aries' ? 'selected' : '' }}>Aries</option>
                 <option value="Taurus" {{ ($info->sun_sign) == 'Taurus' ? 'selected' : '' }}>Taurus</option>
                 <option value="Gemini" {{ ($info->sun_sign) == 'Gemini' ? 'selected' : '' }}>Gemini</option>

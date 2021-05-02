@@ -31,3 +31,4 @@ Route::post('/profile/uploadimage', [App\Http\Controllers\ProfileController::cla
 Route::get('/sendconnection/{id}', [App\Http\Controllers\ConnectionController::class, 'sendconnection']);
 Route::get('/sentconnection', [App\Http\Controllers\ConnectionController::class, 'sentconnection']);
 Route::get('/receivedconnection', [App\Http\Controllers\ConnectionController::class, 'receivedconnection']);
+Route::get('/acceptconnection/{id}', [App\Http\Controllers\ConnectionController::class, 'acceptconnection']);

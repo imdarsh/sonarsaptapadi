@@ -3,6 +3,7 @@
 @section('content')
 @include('layouts.navbar')
 <div class="container my-5">
+@include('layouts.message')
 <div class="row text-center text-md-left">
     @foreach($results as $result)   
         <div class="col-lg-6 col-md-12 mb-5 justify-content-between">
