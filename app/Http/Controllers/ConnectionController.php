@@ -8,7 +8,23 @@ use App\Models\User;
 
 class ConnectionController extends Controller
 {
-    //
+    // Show Connections
+    public function connections(){
+       
+        // Sent Connection Data
+        $id = auth()->id();
+        $data = Connection::where('uid1',$id)->where('status',0)->get('uid2','status');
+        $sentuser = User::find($data);
+
+        // Received Connection Data
+        $id = auth()->id();
+        $data = Connection::where('uid2',$id)->where('status',0)->get('uid1','status');
+        $receiveduser = User::find($data);
+       
+        return view('connections.showconnection',['sentuser'=>$sentuser,'receiveduser'=>$receiveduser]);
+    }
+
+    // Send Connection Backend
     public function sendconnection($id)
     {
         $status = 0;
@@ -27,26 +43,10 @@ class ConnectionController extends Controller
         else{
             return redirect()->back()->with('exists','Connection Already Sent');
         }
-        
-        // dd($conn1,$conn2);
     }
 
-    public function sentconnection()
-    {
-        $id = auth()->id();
-        $data = Connection::where('uid1',$id)->where('status',0)->get('uid2','status');
-        $user = User::find($data);
-        return view('profile.sentconnection')->with('user',$user);
-    }
 
-    public function receivedconnection()
-    {
-        $id = auth()->id();
-        $data = Connection::where('uid2',$id)->where('status',0)->get('uid1','status');
-        $user = User::find($data);
-        return view('profile.receivedconnection')->with('user',$user);
-    }
-
+    // Accept Connection Backend 
     public function acceptconnection($id)
     {
         $ids = auth()->id();
@@ -56,8 +56,13 @@ class ConnectionController extends Controller
         return redirect()->back()->with('success','Connection Accepted Successfully');
     }
 
-    public function matchedconnection()
+    // Matched Connection Data
+    public function matches()
     {
-        return view('profile.matchedconnection');
+        // $uid = auth()->id();
+        // $conn = Connection::find($uid);
+        // dd($conn);
+        // return view('connections.matches')->with('matcheduser',$matcheduser);
     }
+
 }

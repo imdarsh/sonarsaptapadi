@@ -49,8 +49,10 @@
             aria-labelledby="navbarDropdownMenuLink-55">
             <!-- <a class="dropdown-item" href="#"></a> -->
             <a class="dropdown-item" href="/profile">Profile</a>
-            <a class="dropdown-item" href="/sentconnection">Sent Connections</a>
-            <a class="dropdown-item" href="/receivedconnection">Received Connections</a>
+            <a class="dropdown-item" href="/connections">Connections</a>
+            <a class="dropdown-item" href="/matches">Matches</a>
+            <a class="dropdown-item" href="/settings">Settings</a>
+            <a class="dropdown-item" href="/subscription">Subscription</a>
             <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
