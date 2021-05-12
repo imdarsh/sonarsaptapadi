@@ -12,6 +12,7 @@ class ProfileController extends Controller
     {
         $this->middleware('auth');
     }
+    
     //Profile page
     public function show()
     {

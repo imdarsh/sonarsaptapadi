@@ -38,3 +38,8 @@ Route::get('/connections', [App\Http\Controllers\ConnectionController::class, 'c
 Route::get('/sendconnection/{id}', [App\Http\Controllers\ConnectionController::class, 'sendconnection']);
 Route::get('/acceptconnection/{id}', [App\Http\Controllers\ConnectionController::class, 'acceptconnection']);
 Route::get('/matches', [App\Http\Controllers\ConnectionController::class, 'matches']);
+
+// Settings Routes
+Route::get('/settings', [App\Http\Controllers\SettingController::class,'showsettings']);
+Route::get('/settings/changepassword', [App\Http\Controllers\SettingController::class,'showchangepassword']);
+Route::post('/settings/changepassword',[App\Http\Controllers\SettingController::class,'changepassword']);

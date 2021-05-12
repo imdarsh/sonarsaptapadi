@@ -8,7 +8,12 @@ use App\Models\Connection;
 
 class SearchController extends Controller
 {
-    //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    // Search Function
     public function search()
     {
         //Search Filter Backend

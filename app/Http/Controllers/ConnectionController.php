@@ -9,6 +9,11 @@ use DB;
 
 class ConnectionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     // Show Connections
     public function connections(){
        
