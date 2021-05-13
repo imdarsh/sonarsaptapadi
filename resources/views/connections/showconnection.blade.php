@@ -2,9 +2,10 @@
 
 @section('content')
 @include('layouts.navbar')
-    
+    <div class="container my-5">
     <!-- Received Connection Frontend -->
-    <p class="h3 text-center my-5">Received Connection</p>
+    <p class="h2">Received Connection</p>
+    <hr>
     <div class="container my-5">
         @include('layouts.message')
         <div class="row text-center text-md-left">
@@ -36,7 +37,8 @@
     
        
     <!-- Sent Connection Frontend -->
-    <p class="h3 my-5 text-center">Sent Connections</p>
+    <p class="h2">Sent Connections</p>
+    <hr>
     <div class="container my-5">
         <div class="row text-center text-md-left">
             @if(count($sentuser) < 1 )
@@ -62,7 +64,7 @@
         </div>
     </div>
 
-
+    </div>
     
 
 

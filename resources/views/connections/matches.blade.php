@@ -2,8 +2,9 @@
 
 @section('content')
 @include('layouts.navbar')
-    <div class="container">
-        <p class="h3 py-5 text-center">Matched Connection</p>
+    <div class="container py-5">
+        <p class="h2">Matched Connection</p>
+        <hr>
         <div class="container my-5">
         <div class="row text-center text-md-left">
             @if(count($matcheduser) < 1 )

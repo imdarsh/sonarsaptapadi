@@ -32,7 +32,8 @@
     </div>
     </section>
     <div class="my-5">
-    <p class="h1">Basic Information</p>
+    <p class="h2">Basic Information</p>
+    <hr>
     <p class="font-weight-bold">Name: {{ $info->name }}</p>
     <p class="font-weight-bold">Age: {{ $info->age }}</p>
     <p class="font-weight-bold">Date of Birth: {{ $info->dob }}</p>
@@ -41,7 +42,8 @@
     </div>
 
     <div class="my-5">
-    <h3 class="font-weight-bold">Education and Career</h3>
+    <p class="h2">Education and Career</p>
+    <hr>
     <p class="font-weight-bold">Highest Qualification: {{ $info->highest_qualification }}</p>
     <p class="font-weight-bold">College Attended: {{ $info->college_attended }}</p>
     <p class="font-weight-bold">Working For: {{ $info->working_for }}</p>
@@ -50,7 +52,8 @@
     </div>
     
     <div class="my-5">
-    <h3 class="font-weight-bold">Family Details</h3>
+    <p class="h2">Family Details</p>
+    <hr>
     <p class="font-weight-bold">Father's Name: {{ $info->father_name }}</p>
     <p class="font-weight-bold">Mother's Name: {{ $info->mother_name }}</p>
     <p class="font-weight-bold">No of Brothers: {{ $info->no_of_brothers }}</p>
@@ -61,7 +64,8 @@
     </div>
     
     <div class="my-5">
-    <h3 class="font-weight-bold">Astro Details</h3>
+    <p class="h2">Astro Details</p>
+    <hr>
     <p class="font-weight-bold">Date of Birth: {{ $info->dob }}</p>
     <p class="font-weight-bold">Time of Birth: {{ $info->tob }}</p>
     <p class="font-weight-bold">City of Birth: {{ $info->cob }}</p>
@@ -72,7 +76,8 @@
     </div>
 
     <div class="my-5">
-    <h3 class="font-weight-bold">Contact Information</h3>
+    <p class="h2">Contact Information</p>
+    <hr>
     <p class="font-weight-bold">Email: {{ $info->email }}</p>
     <p class="font-weight-bold">Mobile No: {{ $info->mobile_no }}</p>
     </div>

@@ -7,7 +7,8 @@
         <form action="/profile/edit/update" method="POST">
         @csrf
         @foreach($data as $info)
-        <p class="h3 text-center mb-5">Basic Information</p>
+        <p class="h2">Basic Information</p>
+        <hr>
             <div class="row">
                 <div class="col">
                     <div class="form-group">
@@ -75,7 +76,8 @@
                         </div>
                 </div>
             </div>  
-            <p class="h3 text-center my-5">Education and Career</p>
+            <p class="h2 mt-5">Education and Career</p>
+            <hr>
             <div class="row">
                 <div class="col">
                     <div class="form-group">
@@ -130,7 +132,8 @@
                     </div>
                 </div>
             </div>  
-            <p class="h3 text-center">Family Details</p>
+            <p class="h2 mt-5">Family Details</p>
+            <hr>
             <div class="row">
                 <div class="col">
                 <div class="form-group">
@@ -165,7 +168,8 @@
                 </div>
             </div>
             </div>
-            <p class="h3 text-center">Astro Details</p>
+            <p class="h2 mt-5">Astro Details</p>
+            <hr>
             <div class="row">
             <div class="col">
             <div class="form-group">
@@ -219,7 +223,8 @@
             </div>
             </div>
             </div>
-            <p class="h3 text-center">Contact Information</p>
+            <p class="h2 mt-5">Contact Information</p>
+            <hr>
             <div class="row">
                 <div class="col">
                     <div class="form-group">
