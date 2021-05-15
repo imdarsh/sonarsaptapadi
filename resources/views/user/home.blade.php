@@ -84,19 +84,16 @@
         </select>
       </div>
       <div class="col">
-        <input type="text" name="city" placeholder="City" class="form-control" required>
+        <input type="text" name="city" placeholder="City" class="form-control">
       </div>
       <div class="col">
-        <input type="text" name="age_min" placeholder="Minimum Age" class="form-control" required>
+        <input type="text" name="age_min" placeholder="Minimum Age" class="form-control">
       </div>
       <div class="col">
-        <input type="text" name="age_max" placeholder="Maximum Age" class="form-control" required>
+        <input type="text" name="age_max" placeholder="Maximum Age" class="form-control">
       </div>
       <div class="col">
-        <select name="subcaste" placeholder="Sub-Caste" class="mdb-form form-control">
-        <option value="Ahir">Ahir</option>
-        <option value="Lad">Lad</option>
-        <option value="Other">Other</option>
+        <input type="text" name="highest_qualification" placeholder="Education" class="form-control">
         </select>
       </div>
       <div class="col">

@@ -46,6 +46,4 @@ Route::get('/settings/changepassword', [App\Http\Controllers\SettingController::
 Route::post('/settings/changepassword',[App\Http\Controllers\SettingController::class,'changepassword']);
 
 
-// Reset Password Routes
-// Route::get('/password/reset', [App\Http\Controllers\ForgotPasswordController::class, 'forgetpassword']);
 

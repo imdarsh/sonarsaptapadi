@@ -54,11 +54,7 @@
             <option value="Other">Other</option>
             </select>
 
-            <select name="highest_qualification" class="mdb-select form-control md-form" required>
-            <option value="" disabled selected>Highest Qualification</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-            </select>
+            <input type="text" name="highest_qualification" id="highestQualification" placeholder="Highest Qualification" class="form-control" required>
 
             </div>
             <div class="col">
@@ -72,11 +68,7 @@
             <option value="Not Working">Not Working</option>
             </select>
 
-            <select name="working_as" class="mdb-select form-control md-form">
-            <option value="" disabled selected>As</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-            </select>
+            <input type="text" id="workingAs" name="working_as" placeholder="Working As" class="form-control">
 
             <select name="annual_income" class="mdb-select form-control md-form">
             <option value="" disabled selected>Annual Income</option>

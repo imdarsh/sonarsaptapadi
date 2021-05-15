@@ -82,11 +82,7 @@
                 <div class="col">
                     <div class="form-group">
                     <label>Highest Qualification</label>
-                    <select name="highest_qualification" class="mdb-select form-control">
-                    <option value=""></option>
-                    <option value="Yes" {{ ($info->highest_qualification) == 'Yes' ? 'selected' : '' }}>Yes</option>
-                    <option value="No" {{ ($info->highest_qualification) == 'No' ? 'selected' : '' }}>No</option>
-                    </select>
+                    <input type="text" name="highest_qualification" class="form-control" value="{{ $info->highest_qualification }}" required>
                     </div>
                     <div class="form-group">
                         <label>College Attended</label>
@@ -107,10 +103,7 @@
                 <div class="col">
                     <div class="form-group">
                     <label>Working As</label>
-                    <select name="working_as" class="mdb-select form-control"> 
-                    <option value="Yes"  {{ ($info->working_as)  == 'Yes' ? 'selected' : '' }}>Yes</option>
-                    <option value="No"  {{ ($info->working_as) == 'No' ? 'selected' : '' }}>No</option>
-                    </select>
+                    <input type="text" name="working_as" class="form-control" value="{{ $info->working_as }}">
                     </div>
                     <div class="form-group">
                         <label>Annual Income</label>

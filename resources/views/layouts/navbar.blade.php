@@ -43,7 +43,7 @@
             aria-haspopup="true" aria-expanded="false">
             <!-- <img src="https://mdbootstrap.com/img/Photos/Avatars/img (1).jpg" class="rounded-circle"
               alt="avatar image"> -->
-              {{ Auth::user()->name }}
+              {{ Auth::user()->id }}
           </a>
           <div class="dropdown-menu dropdown-menu-lg-right dropdown-dark"
             aria-labelledby="navbarDropdownMenuLink-55">
