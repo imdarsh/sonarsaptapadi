@@ -48,7 +48,7 @@ class ProfileController extends Controller
         $profile->mobile_no = $request->input('mobile_no');
         $profile->save();
         // return $profile;
-        return redirect('/home');
+        return redirect('/');
     }
 
     public function index()
