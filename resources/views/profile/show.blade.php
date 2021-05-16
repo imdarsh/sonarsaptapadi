@@ -4,12 +4,16 @@
 @include('layouts.navbar')
     <div class="container my-5">
     @foreach($data as $info)
-    <section class="text-center px-md-5 mx-md-5 dark-grey-text">
-    <div class="row mb-5">
-      <div class="col-md-4 mx-auto">
+    <!-- <section class="text-center px-md-5 mx-md-5 dark-grey-text"> -->
+    <div class="row mb-5 ">
+      <div class="col-md-4 mx-auto text-center">
         <div class="file-field">
         <div class="mb-4 pb-2">
-          <img src="{{ url('storage/image/'.$info->image) }}" class="z-depth-1 rounded-circle img-fluid mx-auto" alt="smaple image">
+          @if(auth()->user()->image)
+          <img src="{{ url('storage/image/'.$info->image) }}" class="rounded z-depth-1 w-50" alt="sample image">
+          @else
+          <img src="{{ asset('images/avatar.png') }}" class="rounded z-depth w-50" alt="sample image">
+          @endif
         </div>
         <div class="justify-content-center">
           <form action="/profile/uploadimage" method="POST" enctype="multipart/form-data">
@@ -20,7 +24,7 @@
           </div>
           </form>
         </div>
-        <!-- <a href="profile/edit/{{ $info->id }}" class="btn btn-primary btn-rounded">Update Profile</a> -->
+        <hr />
         <a href="profile/edit/{{ $info->id }}" class="btn btn-primary btn-rounded">Update Profile</a>
         <ul class="list-unstyled d-flex justify-content-center mt-3 mb-0 red-text">
           <li><i class="fab fa-twitter mx-2"></i></li>
@@ -30,8 +34,8 @@
         </ul>
       </div>
     </div>
-    </section>
-    <div class="my-5">
+
+  <div class="col mx-auto">
     <p class="h2">Basic Information</p>
     <hr>
     <p class="font-weight-bold">Name: {{ $info->name }}</p>
@@ -40,9 +44,11 @@
     <p class="font-weight-bold">Height: {{ $info->height }} cm</p>
     <p class="font-weight-bold">Blood Group: {{ $info->blood_group }}</p>
     </div>
+    </div>
 
-    <div class="my-5">
-    <p class="h2">Education and Career</p>
+<div class="row">
+<div class="col">    
+<p class="h2">Education and Career</p>
     <hr>
     <p class="font-weight-bold">Highest Qualification: {{ $info->highest_qualification }}</p>
     <p class="font-weight-bold">College Attended: {{ $info->college_attended }}</p>
@@ -50,8 +56,9 @@
     <p class="font-weight-bold">Working As: {{ $info->working_as }}</p>
     <p class="font-weight-bold">Annual Income: {{ $info->annual_income }}</p>
     </div>
+
     
-    <div class="my-5">
+    <div class="col">
     <p class="h2">Family Details</p>
     <hr>
     <p class="font-weight-bold">Father's Name: {{ $info->father_name }}</p>
@@ -62,7 +69,7 @@
     <p class="font-weight-bold">Father's Occupation: {{ $info->father_occupation }}</p>
     <p class="font-weight-bold">Mother Tongue: {{ $info->mother_tongue }}</p>
     </div>
-    
+    </div>
     <div class="my-5">
     <p class="h2">Astro Details</p>
     <hr>
@@ -81,7 +88,7 @@
     <p class="font-weight-bold">Email: {{ $info->email }}</p>
     <p class="font-weight-bold">Mobile No: {{ $info->mobile_no }}</p>
     </div>
-    
+ 
     @endforeach
-    </div>
+    <!-- </div> -->
 @endsection
