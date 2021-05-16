@@ -10,9 +10,9 @@
         <!-- Learn more -->
         <div class="row mt-5">
           <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
-            <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">Meet more than 1 Lakh Sonar Bachelors</h1>
+            <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">Meet 10 lakh+ Sonar Brides & Grooms</h1>
             <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-            <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s">We help you find your perfect someone.</h6>
+            <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s">Find your Perfect Golden Partner with us...</h6>
             <a class="btn btn-outline-white btn-rounded wow fadeInLeft" data-wow-delay="0.3s">Learn more</a>
           </div>
           <!-- Learn more ends -->
@@ -25,16 +25,6 @@
                   <h3 class="white-text font-weight-bold">
                     <i class="fa fa-user white-text"></i> {{ __('Register') }}</h3>
                   <hr class="hr-light">
-                </div>
-                <div class="md-form">
-                  <i class="fa fa-user prefix white-text active"></i>
-                  <input type="text" id="form3" class="white-text form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required>
-                  <label for="form3" class="active">{{ __('Name') }}</label>
-                  @error('name')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
                 </div>
                 <div class="md-form">
                   <i class="fa fa-envelope prefix white-text active"></i>
@@ -75,7 +65,7 @@
                     <a class="p-2 m-2 ins-ic">
                       <i class="fab fa-instagram white-text"> </i>
                     </a>
-                  </div> -
+                  </div> 
                 </div>
                 </form>
               </div>
@@ -85,4 +75,5 @@
       </div>
     </div>
   </div>
+  @include('layouts.information')
 @endsection

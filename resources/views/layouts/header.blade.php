@@ -1,22 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-<img src="{{ asset('images/logo2.png') }}" alt="logo" style="width:150px">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        
-      </a>
+        <img src="{{ asset('images/logo2.png') }}" alt="logo" style="width:100px">
+      
+      
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                   
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                   
-                    <ul class="navbar-nav ml-auto">
-                      
-                        @guest
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+        @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -50,6 +44,7 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul>
-                </div>
+        </ul>
+      </div>
+    </div>
   </nav>

@@ -18,7 +18,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
         'email',
         'password',
         
@@ -42,15 +41,5 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function friends() {
-        return $this->hasMany(Connection::class);
-    }
-    public function isFriend(User $user) {
-        if ($this->friends()->where('uid2', $user->id)->first()){
-            return  true;
-        } 
-        return false;
-    }
 
 }

@@ -13,9 +13,9 @@
         <div class="row mt-5">
           <!-- Grid column-->
           <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
-           <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">Meet more than 1 Lakh Sonar Bachelors</h1>
+           <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">Meet 10 lakh+ Sonar Brides & Grooms</h1>
             <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-            <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s">We help you find your perfect someone.</h6>
+            <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s">Find your Perfect Golden Partner with us...</h6>
             <a class="btn btn-outline-white btn-rounded wow fadeInLeft" data-wow-delay="0.3s">Learn more</a>
           </div>
           <!--Grid column-->
@@ -76,15 +76,11 @@
                 </form>
               </div>
             </div>
-            <!--/.Form-->
-          
-          <!--Grid column-->
         </div>
-        <!--Grid row-->
       </div>
-      <!-- Content -->
     </div>
-    <!-- Mask & flexbox options-->
   </div>
-  <!-- Full Page Intro -->
+</div>
+</div>
+  @include('layouts.information')
 @endsection

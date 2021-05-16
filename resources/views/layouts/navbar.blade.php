@@ -19,20 +19,10 @@
         <li class="nav-item">
           <a class="nav-link" href="/home">Home</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li> -->
-
       </ul>
       <!-- Links -->
       
-      <!-- <ul class="navbar-nav ml-auto nav-flex-icons">
+      <ul class="navbar-nav ml-auto nav-flex-icons">
         <li class="nav-item">
           <a class="nav-link font-weight-normal waves-effect waves-light">1
             <i class="fas fa-envelope"></i>
@@ -40,15 +30,15 @@
         </li>
         <li class="nav-item avatar dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false"> -->
-            <!-- <img src="https://mdbootstrap.com/img/Photos/Avatars/img (1).jpg" class="rounded-circle"
-              alt="avatar image"> -->
-              <!-- 
+            aria-haspopup="true" aria-expanded="false">
+            <img src="https://mdbootstrap.com/img/Photos/Avatars/img (1).jpg" class="rounded-circle"
+              alt="avatar image" style="width:30px">
+              {{ Auth::user()->name }}
           </a>
           <div class="dropdown-menu dropdown-menu-lg-right dropdown-dark"
             aria-labelledby="navbarDropdownMenuLink-55">
-            <a class="dropdown-item" href="#"></a> -->
-            <!-- <a class="dropdown-item" href="/profile">Profile</a>
+            <!-- <a class="dropdown-item" href="#"></a> -->
+            <a class="dropdown-item" href="/profile">Profile</a>
             <a class="dropdown-item" href="/connections">Connections</a>
             <a class="dropdown-item" href="/matches">Matches</a>
             <a class="dropdown-item" href="/settings">Settings</a>
@@ -63,49 +53,10 @@
                                     </form> 
           </div>
         </li>
-      </ul> -->
-      <ul class="navbar-nav ml-auto">
-                      
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-                            
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/profile">
-                                        Profile
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+      </ul>
 
     </div>
     <!-- Collapsible content -->
-
   </div>
-
 </nav>
 <!--/.Navbar-->

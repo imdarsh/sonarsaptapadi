@@ -35,6 +35,7 @@ class ProfileController extends Controller
         else {
             $profile->gender = $request->input('gender');
         }
+        $profile->name = $request->input('name');
         $profile->city = $request->input('city');
         $profile->living_with_family = $request->input('living_with_family');
         $profile->height = $request->input('height');
@@ -48,7 +49,7 @@ class ProfileController extends Controller
         $profile->mobile_no = $request->input('mobile_no');
         $profile->save();
         // return $profile;
-        return redirect('/');
+        return redirect('/home');
     }
 
     public function index()

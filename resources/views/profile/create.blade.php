@@ -25,6 +25,8 @@
                   </select>
             </div>
 
+            <input type="text" name="name" id="name" class="form-control" placeholder="Candidate Name" required>
+
             <select name="gender" id="gender" class="form-control md-select md-form">
               <option value="Male">Male</option>
               <option value="Female">Female</option>

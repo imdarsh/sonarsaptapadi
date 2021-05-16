@@ -2,263 +2,47 @@
 
 @section('content')
 <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
-<link href="{{ asset('css/custom.css') }}" rel="stylesheet">
-<!-- @include('layouts.header') -->
-<!-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<!-- <header>
-  <div class="view" style="background-image: url('{{ asset('images/bg.JPG') }}'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-    <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
-      <div class="container">
-        <div class="row mt-5">
-        <div class="mask d-flex align-items-center h-100" >
-      <div class="container">
-        <p class="h1 mb-4 mb-md-5 text-white text-uppercase text-center">Meet more than 1 Lakh Sonar Bachelors</p>
-        <div class="card" style="background-color: rgba(0,0,0,.7);">
-          <div class="card-body p-4">
-            <div class="row justify-content-center">
-              <div class="col-lg-12 col-xl-10 d-lg-flex flex-row mb-lg-4 mb-xl-0">
-
-                <div id="basic" class="form-outline form-white flex-fill me-lg-2 mb-3 mb-lg-0">
-                  <input type="text" id="form1" class="form-control" placeholder="City" />
-                  <label class="form-label text-white" for="form1">Search By City</label>
-                </div>
-
-                <div class="form-outline datepicker form-white flex-fill mx-lg-2 mb-3 mb-lg-0">
-                  <input type="text" class="form-control" id="exampleDatepicker1" placeholder="Age" />
-                  <label for="form" class="form-label text-white">Search By Age</label>
-                </div>
-
-                <div class="form-outline datepicker form-white flex-fill mx-lg-2 mb-3 mb-lg-0">
-                  <input type="text" class="form-control" id="exampleDatepicker2" placeholder="Education" />
-                  <label for="form" class="form-label text-white">Search By Education</label>
-                </div>
-
-                <div id="location" class="form-outline form-white flex-fill ms-lg-2 mb-4 mb-lg-0">
-                  <input type="text" id="form2" class="form-control" placeholder="Sub-Caste" />
-                  <label class="form-label text-white" for="form2">Search By Sub-Caste</label>
-                </div>
-
-              </div>
-              <div class="col-lg-12 col-xl-2">
-                <button class="btn btn-primary" type="button">Search</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      </div>
-    </div>
-  </div>
-</header>    -->
-
-@include('layouts.navbar')
-<div class="container my-5">
-  <div class="card">
+<!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+  @include('layouts.navbar')
+<section>
+  <div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+    <div class="card">
     <div class="card-body">
     <form action="/search" method="GET">
     <div class="row">
-      <div class="col">
-        <select name="gender" class="mdb-form form-control">
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        </select>
+              <div class="col-md-2 form-group">
+                <select name="gender" class="mdb-form form-control">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                </select>
+              </div>
+                <div class="col-md-2 form-group">
+                  <input type="text" name="city" placeholder="City" class="form-control">
+                </div>
+                <div class="col-md-2 form-group">
+                  <input type="text" name="age_min" placeholder="Minimum Age" class="form-control">
+                </div>
+                <div class="col-md-2 form-group">
+                  <input type="text" name="age_max" placeholder="Maximum Age" class="form-control">
+                </div>
+                <div class="col-md-2 form-group">
+                  <input type="text" name="highest_qualification" placeholder="Education" class="form-control">
+                  </select>
+                </div>
+                <div class="col-md-2 form-group">
+                  <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+              </div>
+        </form>
+              </div>
+          </div>
+          </div>
       </div>
-      <div class="col">
-        <input type="text" name="city" placeholder="City" class="form-control">
-      </div>
-      <div class="col">
-        <input type="text" name="age_min" placeholder="Minimum Age" class="form-control">
-      </div>
-      <div class="col">
-        <input type="text" name="age_max" placeholder="Maximum Age" class="form-control">
-      </div>
-      <div class="col">
-        <input type="text" name="highest_qualification" placeholder="Education" class="form-control">
-        </select>
-      </div>
-      <div class="col">
-        <button class="btn btn-primary" type="submit">Search</button>
-      </div>
-    </div>
-      </form>
-    </div>
-  </div>
-</div>
 
-<main>
-<!-- Services -->
-  <section class="mx-5 my-5">
-    
-    <style>
-      .timeline {
-        position: relative;
-        list-style: none;
-        padding: 1rem 0;
-        margin: 0;
-      }
-
-      .timeline::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        margin-left: -1px;
-        background-color: #50a1ff;
-      }
-
-      .timeline-element {
-        position: relative;
-        width: 50%;
-        padding: 1rem 0;
-        padding-right: 2.5rem;
-        text-align: right;
-      }
-
-      .timeline-element::before {
-        content: '';
-        position: absolute;
-        right: -8px;
-        top: 1.35rem;
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        border: 2px solid #50a1ff;
-        background-color: #fff;
-      }
-
-      .timeline-element:nth-child(even)::before {
-        right: auto;
-        left: -8px;
-      }
-
-      .timeline-element:nth-child(even) {
-        margin-left: 50%;
-        padding-left: 2.5rem;
-        padding-right: 0;
-        text-align: left;
-      }
-
-      @media (max-width: 767.98px) {
-        .timeline::before {
-          left: 8px;
-        }
-      }
-
-      @media (max-width: 767.98px) {
-        .timeline-element {
-          width: 100%;
-          text-align: left;
-          padding-left: 2.5rem;
-          padding-right: 0;
-        }
-      }
-
-      @media (max-width: 767.98px) {
-        .timeline-element::before {
-          top: 1.25rem;
-          left: 1px;
-        }
-      }
-
-      @media (max-width: 767.98px) {
-        .timeline-element:nth-child(even) {
-          margin-left: 0rem;
-        }
-      }
-
-      @media (max-width: 767.98px) {
-        .timeline-element {
-          width: 100%;
-          text-align: left;
-          padding-left: 2.5rem;
-          padding-right: 0;
-        }
-      }
-
-      @media (max-width: 767.98px) {
-        .timeline-element:nth-child(even)::before {
-          left: 1px;
-        }
-      }
-
-      @media (max-width: 767.98px) {
-        .timeline-element::before {
-          top: 1.25rem;
-        }
-      }
-    </style>
-    
-    <h3 class="font-weight-bold text-center dark-grey-text pb-2">Our Services</h3>
-    <hr class="w-header my-4">
-    <p class="lead text-center text-muted pt-2 mb-5">We Help you connect with more than 1 Lakh Sonar Bachelors</p>
-    
-    <div class="row">
-      <div class="col-lg-8 mx-auto">
-
-        <ol class="timeline">
-          <li class="timeline-element">
-            <h5 class="font-weight-bold dark-grey-text mb-3">Register to our Website</h5>
-            <p><img class="img-fluid rounded" src="{{ asset('images/wedding.png') }}" alt="..."></p>
-            <p class="text-muted">Register to our website using name and email</p>
-          </li>
-
-          <li class="timeline-element">
-            <h5 class="font-weight-bold dark-grey-text mb-3">Got the first 100 users</h5>
-            <!-- <p class="grey-text font-small"><time datetime="2017-08-17">17 Aug 2017</time></p> -->
-            <p><img class="img-fluid rounded" src="{{ asset('images/png/2.2.png') }}" alt="..."></p>
-            <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam adipisci reiciendis porro natus laudantium similique. 
-              Explicabo amet ipsum fugiat aliquam alias.</p>
-          </li>
-
-          <li class="timeline-element">
-            <h5 class="font-weight-bold dark-grey-text mb-3">Raised $1.4 million in seed funding</h5>
-            <p><img class="img-fluid rounded" src="{{ asset('images/png/3.3.png') }}" alt="..."></p>
-            <!-- <p class="grey-text font-small"><time datetime="2018-03-26">26 Mar 2019</time></p> -->
-            <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam adipisci reiciendis porro natus laudantium similique. 
-              Explicabo amet ipsum fugiat aliquam alias.</p>
-          </li>
-
-          <li class="timeline-element">
-            <h5 class="font-weight-bold dark-grey-text mb-3">Team size increased to 20</h5>
-            <p><img class="img-fluid rounded" src="{{ asset('images/png/1.1.png') }}" alt="..."></p>
-            <!-- <p class="grey-text font-small"><time datetime="2018-04-14">14 Apr 2019</time></p> -->
-            <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam adipisci reiciendis porro natus laudantium similique. 
-              Explicabo amet ipsum fugiat aliquam alias.</p>
-          </li>
-        </ol>
-
-      </div>
-    </div>
-    
-  </section>
-
-<!-- Counter -->
-<!-- <div class="container my-5 z-depth-1 px-0 rounded"> -->
-
-
+  </div>  
+</section>
   <!--Section: Content-->
   <section class="white-text p-5 rounded" style="background-color:#ffa500">
     
