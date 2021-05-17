@@ -36,6 +36,7 @@ class ProfileController extends Controller
             $profile->gender = $request->input('gender');
         }
         $profile->name = $request->input('name');
+        $profile->age = $request->input('age');
         $profile->city = $request->input('city');
         $profile->living_with_family = $request->input('living_with_family');
         $profile->height = $request->input('height');
@@ -70,6 +71,7 @@ class ProfileController extends Controller
     {
         $id = auth()->id();
         $data = User::find($id);
+        $data->bio = $request->input('bio');
         $data->name = $request->input('name');
         $data->age = $request->input('age');
         $data->marital_status = $request->input('marital_status');
@@ -99,6 +101,17 @@ class ProfileController extends Controller
         $data->sun_sign = $request->input('sun_sign');
         $data->email = $request->input('email');
         $data->mobile_no = $request->input('mobile_no');
+        if ($request->hasFile('image')) {
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore = $id. '_'. time().'.'.$extension;
+            $path = $request->file('image')->storeAs('image', $fileNameToStore, 'public');
+            $data->image = $fileNameToStore;
+            }
+            else {
+            $fileNameToStore = 'noimage.jpg';
+            }
         $data->update();
         return redirect('/profile');
     }

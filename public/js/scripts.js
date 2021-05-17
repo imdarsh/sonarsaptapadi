@@ -11,3 +11,16 @@ $(document).ready(function() {
     });
   });
 
+  $(document).ready(function() {
+    $("#workingFor").change(function() {
+      if ($(this).val() == "Not Working") {
+        $('#workingAs').hide();
+        $('#annualIncome').hide();
+      } else {
+        $('#workingAs').show();
+        $('#annualIncome').show();
+      }
+    });
+  });
+
+

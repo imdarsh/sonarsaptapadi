@@ -2,15 +2,37 @@
 
 @section('content')
     @include('layouts.navbar')
-    @foreach($data as $info)
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <div class="container   my-5 py-5">
-        <form action="/profile/edit/update" method="POST">
+        <form action="/profile/edit/update" method="POST" enctype="multipart/form-data">
         @csrf
-        @foreach($data as $info)
-        <p class="h2">Basic Information</p>
+    @foreach($data as $info)
+        <div class="file-field text-center mb-5">
+        <div class="mb-4 pb-2">
+         <div class="row-md-6">
+            @if($info->image)
+          <img src="{{ url('storage/image/'.$info->image) }}" class="rounded z-depth-1 w-25" alt="sample image">
+          @else
+          <img src="{{ asset('images/avatar.png') }}" class="rounded z-depth w-25" alt="sample image">
+          @endif
+         </div>
+        </div>
+        <div class="justify-content-center">
+        <div class="fileUpload btn btn-primary">
+        <span>Choose Image</span>
+        <input type="file" name="image" class="upload" />
+        </div>
+        </div>
+        </div>
+        <p class="h2">Bio</p>
+        <hr>
+        <div class="row m-2">
+        <textarea class="form-control" name="bio" id="" cols="" rows="10">{{ $info->bio }}</textarea>
+        </div>
+        <p class="h2 mt-5">Basic Information</p>
         <hr>
             <div class="row">
-                <div class="col">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label>Name</label>
                         <input name="name" type="text" class="form-control" value="{{ $info->name }}" required>
@@ -41,7 +63,7 @@
                     <input type="text" name="city" class="form-control" value="{{ $info->city }}">
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-md-6">
                     <div class="form-group">
                     <label>Height</label>
                         <input name="height" type="text" class="form-control" value="{{ $info->height }}">
@@ -79,7 +101,7 @@
             <p class="h2 mt-5">Education and Career</p>
             <hr>
             <div class="row">
-                <div class="col">
+                <div class="col-md-6">
                     <div class="form-group">
                     <label>Highest Qualification</label>
                     <input type="text" name="highest_qualification" class="form-control" value="{{ $info->highest_qualification }}" required>
@@ -100,7 +122,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-md-6">
                     <div class="form-group">
                     <label>Working As</label>
                     <input type="text" name="working_as" class="form-control" value="{{ $info->working_as }}">
@@ -128,7 +150,7 @@
             <p class="h2 mt-5">Family Details</p>
             <hr>
             <div class="row">
-                <div class="col">
+                <div class="col-md-6">
                 <div class="form-group">
                 <label>Father's Name</label>
                 <input type="text" name="father_name" class="form-control" value="{{ $info->father_name }}">
@@ -164,7 +186,7 @@
             <p class="h2 mt-5">Astro Details</p>
             <hr>
             <div class="row">
-            <div class="col">
+            <div class="col-md-6">
             <div class="form-group">
                 <label>Time of Birth</label>
                 <input type="time" id="default-picker" class="form-control" placeholder="Select time" name="tob" value="{{ $info->tob }}">
@@ -233,10 +255,7 @@
             <div class="form-group text-center">
                 <button class="btn btn-primary btn-rounded" type="submit">Update Profile</button>
             </div>
-
-            @endforeach
+    @endforeach 
         </form>
-    <!-- </section> -->
     </div>        
-    @endforeach
 @endsection
