@@ -4,7 +4,7 @@
 @include('layouts.navbar')
 @foreach($data as $info)
   <div class="container pt-5">
-    <div class="row">
+  <div class="row">
       <div class="col-md-6 text-center mb-5">
       <div class="mb-4 pb-2">
           @if(auth()->user()->image)
@@ -17,43 +17,21 @@
         <a href="profile/edit/{{ $info->id }}" class="btn btn-primary btn-rounded">Edit Profile</a>
       </div>
       <div class="col-md-6 mb-5">
-      <p class="h3">Bio</p>
-      <p>{{ $info->bio }}</p>
-      </div>
+        <div class="card card-body">
+        <div class="h3">{{ $info->name }}</div>
+        <div class="h5 mt-3"><i class="fa fa-map-marker-alt"></i> {{ $info->city }}</div>
+        <div class="h5 mt-3">Age : <span>{{ $info->age }}</span></div>
+        <div class="h5 mt-3">Height : <span>{{ $info->height }} cm</span></div>
+        @if($info->living_with_family == 'Yes')
+            <div class="h5 mt-3">I live with my Family</div>
+        @else
+            <div class="h5 mt-3">I do not live with my Family</div>
+        @endif
+        <div class="mt-3">{{ $info->bio }}</div>
+        </div>
     </div>
-    <div class="row">
-    <div class="col-md-6 mb-5">
-      <table class="table table-hover table-fixed">
-        <thead>
-          <tr>
-            <th class="h3 text-nowrap">Personal Information</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Name : </th>
-            <td>{{ $info->name }}</td>
-          </tr>
-          <tr>
-            <th>Age : </th>
-            <td>{{ $info->age }}</td>
-          </tr>
-          <tr>
-            <th>Height : </th>
-            <td>{{ $info->height }} cm</td>
-          </tr>
-          <tr>
-            <th>Date Of Birth :   </th>
-            <td>{{ $info->dob }}</td>
-          </tr>
-          <tr>
-            <th>City : </th>
-            <td>{{ $info->city }}</td>
-          </tr>
-        </tbody>
-        </table>
-      </div>
-      <div class="col-md-6 mb-5">
+    <div class="card card-body mb-5">
+    <div class="col mb-5">
       <table class="table table-hover table-fixed">
         <thead>
           <tr>
@@ -84,9 +62,8 @@
         </tbody>
         </table>
       </div>
-    </div>
     <div class="row">
-    <div class="col-md-6 mb-5">
+    <div class="col-md-6">
     <table class="table table-hover table-fixed">
         <thead>
           <tr>
@@ -121,7 +98,7 @@
         </tbody>
         </table>
     </div>
-    <div class="col-md-6 mb-5">
+    <div class="col-md-6">
     <table class="table table-hover table-fixed">
         <thead>
           <tr>
@@ -156,6 +133,8 @@
         </tbody>
         </table>
     </div>
+    </div>
+    </div>  
     </div>
   </div>
   @endforeach

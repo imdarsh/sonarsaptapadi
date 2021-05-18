@@ -6,9 +6,9 @@
     <div class="container my-5">
     @include('layouts.message')
         <!-- Change Password -->
-        <p class="h2">Change Password</p>
+        <p class="h2">Settings</p>
         <hr>
-        <a href="/settings/changepassword" class="btn-link">Change Password</a>
+        <div class="mb-2"><a href="/settings/changepassword" class="btn-link h5">Change Password</a></div>
     </div>
 
 @endsection
