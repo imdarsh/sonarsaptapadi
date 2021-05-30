@@ -24,7 +24,7 @@
       
       <ul class="navbar-nav ml-auto nav-flex-icons">
         <li class="nav-item">
-          <a class="nav-link font-weight-normal waves-effect waves-light">1
+          <a class="nav-link font-weight-normal waves-effect waves-light" href="/inbox">
             <i class="fas fa-envelope"></i>
           </a>
         </li>

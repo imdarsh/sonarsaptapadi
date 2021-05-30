@@ -3,21 +3,22 @@
 @section('content')
 @include('layouts.navbar')
 @foreach($data as $info)
-  <div class="container pt-5">
-  <div class="row">
-      <div class="col-md-6 text-center mb-5">
-      <div class="mb-4 pb-2">
+  <div class="container-fluid pt-5">
+    <div class="row">
+      
+      <div class="col-md-3">
+      <div class="card pt-5">
+      <div class="mb-4 pb-2 text-center">
           @if(auth()->user()->image)
           <img src="{{ url('storage/image/'.$info->image) }}" class="m-2 rounded z-depth-1 w-50" alt="sample image">
           @else
           <img src="{{ asset('images/avatar.png') }}" class="m-2 rounded z-depth w-50" alt="sample image">
           @endif
-        </div>
         <p class="h3">{{ $info->id }}</p>
         <a href="profile/edit/{{ $info->id }}" class="btn btn-primary btn-rounded">Edit Profile</a>
-      </div>
-      <div class="col-md-6 mb-5">
-        <div class="card card-body">
+        </div>
+        
+        <div class="card-body">
         <div class="h3">{{ $info->name }}</div>
         <div class="h5 mt-3"><i class="fa fa-map-marker-alt"></i> {{ $info->city }}</div>
         <div class="h5 mt-3">Age : <span>{{ $info->age }}</span></div>
@@ -28,9 +29,12 @@
             <div class="h5 mt-3">I do not live with my Family</div>
         @endif
         <div class="mt-3">{{ $info->bio }}</div>
-        </div>
-    </div>
-    <div class="card card-body mb-5">
+      </div>
+      </div>
+      </div>
+      
+      <div class="col-md-8">
+      <div class="card card-body mb-5">
     <div class="col mb-5">
       <table class="table table-hover table-fixed">
         <thead>
@@ -133,8 +137,8 @@
         </tbody>
         </table>
     </div>
-    </div>
-    </div>  
+      </div>
+
     </div>
   </div>
   @endforeach

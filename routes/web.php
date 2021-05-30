@@ -45,5 +45,9 @@ Route::get('/settings', [App\Http\Controllers\SettingController::class,'showsett
 Route::get('/settings/changepassword', [App\Http\Controllers\SettingController::class,'showchangepassword']);
 Route::post('/settings/changepassword',[App\Http\Controllers\SettingController::class,'changepassword']);
 
+// Subscriptions Routes
+Route::get('/subscription',[App\Http\Controllers\SubscriptionController::class,'index']);
 
-
+//Inbox Routes
+Route::get('/inbox',[App\Http\Controllers\InboxController::class,'showlist']);
+Route::get('/inbox/chats/{id}',[App\Http\Controllers\InboxController::class,'showmessages']);
