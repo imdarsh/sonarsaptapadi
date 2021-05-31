@@ -10,7 +10,7 @@
       <div class="card pt-5">
       <div class="mb-4 pb-2 text-center">
           @if(auth()->user()->image)
-          <img src="{{ url('storage/image/'.$info->image) }}" class="m-2 rounded z-depth-1 w-50" alt="sample image">
+          <a href="{{ url('storage/image/'.$info->image) }}" data-size="1600x1067"><img src="{{ url('storage/image/'.$info->image) }}" class="m-2 rounded z-depth-1 w-50" alt="sample image"></a>
           @else
           <img src="{{ asset('images/avatar.png') }}" class="m-2 rounded z-depth w-50" alt="sample image">
           @endif

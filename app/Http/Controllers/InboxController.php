@@ -22,6 +22,7 @@ class InboxController extends Controller
 
     public function showmessages($id)
     {
-        return view('inbox.showmessages');        
+        $username = User::find($id);
+        return view('inbox.showmessages',['username'=>$username]);        
     }
 }
