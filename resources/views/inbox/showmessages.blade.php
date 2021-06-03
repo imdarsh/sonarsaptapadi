@@ -9,13 +9,16 @@
                 
             </div>
             <div class="card-footer">
-            <div class="input-group ">
+           <form action="/sendmessage" method="post">
+           @csrf
+           <div class="input-group ">
             <input type="text" class="form-control" placeholder="Type a message" aria-label="Recipient's username"
                 aria-describedby="button-addon2">
             <div class="input-group-append">
                 <button class="btn btn-md btn-success m-0 px-3 py-2 z-depth-0 waves-effect" type="button" id="button-addon2">Send</button>
             </div>
             </div>
+           </form>
             </div>
         </div>
     </div>
