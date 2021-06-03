@@ -48,6 +48,7 @@ Route::post('/settings/changepassword',[App\Http\Controllers\SettingController::
 // Subscriptions Routes
 Route::get('/subscription',[App\Http\Controllers\SubscriptionController::class,'index']);
 
-//Inbox Routes
-Route::get('/inbox',[App\Http\Controllers\InboxController::class,'showlist']);
-Route::get('/inbox/chats/{id}',[App\Http\Controllers\InboxController::class,'showmessages']);
+//Messages Routes
+Route::get('/inbox',[App\Http\Controllers\MessageController::class,'showList']);
+Route::get('/inbox/chats/{id}', [App\Http\Controllers\MessageController::class,'fetchMessages']);
+Route::post('/inbox/chats/{id}',[App\Http\Controllers\MessageController::class,'sendMessage']);
