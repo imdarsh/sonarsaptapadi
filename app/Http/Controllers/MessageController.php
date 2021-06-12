@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Connection;
 use App\Models\User;
 use App\Models\Message;
-use App\Events\MessageSent;
+use App\Events\ChatEvent;
 use DB;
+use Pusher\Pusher;
 
 class MessageController extends Controller
 {
@@ -29,25 +30,36 @@ class MessageController extends Controller
 
     public function fetchMessages($id)
     {
-        $username = User::find($id);
-        $message = Message::where('sender_id',auth()->id())->where('recipient_id',$id)->orWhere('recipient_id',auth()->id())->where('sender_id',$id)->get();
-        return view('inbox.showmessages',['username'=>$username,'message'=>$message]);        
+        // dd($id);
+        $messages = Message::where('sender_id',auth()->id())->where('recipient_id',$id)->orWhere('recipient_id',auth()->id())->where('sender_id',$id)->get();
+        // dd($messages);
+        return view('inbox.showmessages',['messages'=>$messages,'id'=>$id]);
+
     }
 
-    public function sendMessage($id, Request $request)
+    // Function To Send Message
+    public function sendMessage(Request $request)
     {
-        $chat = new Message; 
-        $user = auth()->id();
-        // $message = $user->messages()->create([
-        //     'message' => $request->input('message')
-        // ]);
+        $chat = new Message;
         $chat->sender_id = auth()->id();
-        $chat->recipient_id = $id;
-        $message = $chat->message = $request->input('message');
+        $chat->recipient_id = $request->receiver_id;;
+        $chat->message = $message = $request->message;
         $chat->save();
-        broadcast(new MessageSent($message))->toOthers();
-        // return redirect()->back();
-        return ['status' => 'Message Sent!'];
-    }
 
+
+        $options =  array(
+            'cluster' => 'ap2',
+            'useTLS' => true
+        );
+
+        $pusher = new Pusher(
+            env('PUSHER_APP_KEY'),
+            env('PUSHER_APP_SECRET'),
+            env('PUSHER_APP_ID'),
+            $options
+        );
+
+        $pusher->trigger('chat','ChatEvent',$chat);
+        // broadcast(new ChatEvent($message))->toOthers();
+    }
 }

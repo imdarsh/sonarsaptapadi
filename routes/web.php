@@ -50,5 +50,6 @@ Route::get('/subscription',[App\Http\Controllers\SubscriptionController::class,'
 
 //Messages Routes
 Route::get('/inbox',[App\Http\Controllers\MessageController::class,'showList']);
-Route::get('/inbox/chats/{id}', [App\Http\Controllers\MessageController::class,'fetchMessages']);
-Route::post('/inbox/chats/{id}',[App\Http\Controllers\MessageController::class,'sendMessage']);
+// Route::get('/inbox/chats/{id}', [App\Http\Controllers\MessageController::class,'chatPage']);
+Route::get('/inbox/chats/{id}',[App\Http\Controllers\MessageController::class,'fetchMessages']);
+Route::post('/inbox/chats', [App\Http\Controllers\MessageController::class,'sendMessage']);

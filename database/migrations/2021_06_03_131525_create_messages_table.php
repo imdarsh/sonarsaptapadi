@@ -17,7 +17,8 @@ class CreateMessagesTable extends Migration
             $table->id();
             $table->string('sender_id');
             $table->string('recipient_id');
-            $table->text('message');
+            $table->string('message',5000)->nullable();
+            $table->boolean('seen')->default(false);
             $table->timestamps();
         });
     }

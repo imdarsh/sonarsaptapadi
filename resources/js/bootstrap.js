@@ -21,7 +21,12 @@ try {
 
 window.axios = require('axios');
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common = {
+    'X-Requested-With': 'XMLHttpRequest',
+   'Content-Type':'application/json',
+   'Accept':'application/json'
+};
+
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -29,27 +34,12 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * allows your team to easily build robust real-time web applications.
  */
 
-// import Echo from 'laravel-echo';
+import Echo from 'laravel-echo';
 
-// window.Pusher = require('pusher-js');
-
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     forceTLS: true
-// });
-
-import Echo from 'laravel-echo'
+window.Pusher = require('pusher-js');
 
 window.Echo = new Echo({
-  broadcaster: 'pusher',
-  key: '74b5a2be2a7c5114c9c0',
-  cluster: 'ap2',
-  forceTLS: true
-});
-
-var channel = Echo.channel('my-channel');
-channel.listen('.my-event', function(data) {
-  alert(JSON.stringify(data));
+    broadcaster: 'pusher',
+    key: "11336dd02946497e3d91",
+    cluster: "ap2",
 });

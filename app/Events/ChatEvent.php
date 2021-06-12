@@ -2,8 +2,6 @@
 
 namespace App\Events;
 
-use App\Models\User;
-use App\Models\Message;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -12,10 +10,11 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class MessageSent implements ShouldBroadcast
+class ChatEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    // public $user;
     public $message;
 
     /**
@@ -23,11 +22,11 @@ class MessageSent implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct(Message $message)
+    public function __construct($message)
     {
-        //
-        $this->middleware('auth');
         $this->message = $message;
+        // $this->user = $user;
+        // $this->dontBroadcastToCurrentUser();
     }
 
     /**
