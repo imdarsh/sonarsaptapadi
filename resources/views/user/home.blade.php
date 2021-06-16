@@ -2,7 +2,6 @@
 
 @section('content')
 <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
-<!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
   @include('layouts.navbar')
 <section>
   <div class="container my-5">

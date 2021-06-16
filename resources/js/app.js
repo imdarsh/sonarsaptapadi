@@ -27,11 +27,11 @@ require('./bootstrap');
  */
 
 //  import Vue from 'vue';
-//  import VueChatScroll from 'vue-chat-scroll';
+ import VueChatScroll from 'vue-chat-scroll';
 
 
-// window.Vue = require('vue');
-// Vue.use(VueChatScroll);
+window.Vue = require('vue');
+Vue.use(VueChatScroll);
 
 // Vue.component('message', require('./components/Message.vue').default);
 
@@ -47,8 +47,8 @@ require('./bootstrap');
 //     },
 // });
 
-Echo.private('chat')
-    .listen('ChatEvent', (e) => {
-        console.log(e);
-    });
+// Echo.private('chat')
+//     .listen('ChatEvent', (e) => {
+//         console.log(e);
+//     });
 

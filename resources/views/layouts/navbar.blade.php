@@ -1,5 +1,6 @@
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-light grey lighten-3">
+<link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
 
   <div class="container">
 

@@ -12,11 +12,19 @@
     <div class="card" id="app">
             <div class="card-header"></div>
             <div class="card-body mh-100 list-overflow" style="min-height:500px" v-chat-scroll>
-                <ul class="messages">
-                  @foreach($messages as $message)
-                    <li>{{ $message->message }}</li>
+                @foreach($messages as $message)
+                    @if($message->sender_id == auth()->id())
+                    <div class="d-flex justify-content-end">
+                    <div class="text-right text-dark alert alert-primary col-6">{{ $message->message }}</div>
+                    </div>
+                    @else
+                    <div class="d-flex justify-content-start">
+                    <div class="text-left text-dark alert alert-primary col-6">{{ $message->message }}</div>
+                    </div>
+                        
+                    @endif
                   @endforeach
-                </ul>
+                
             </div>
             <div class="card-footer">
 
@@ -42,7 +50,7 @@ $(document).ready(function () {
     var my_id = "{{ auth()->id() }}";
     var receiver_id = "{{ $id }}";
 
-    Pusher.logToConsole = true;
+    Pusher.logToConsole = false;
 
     var pusher = new Pusher('11336dd02946497e3d91', {
       cluster: 'ap2'
@@ -50,8 +58,8 @@ $(document).ready(function () {
 
     var channel = pusher.subscribe('chat');
     channel.bind('ChatEvent', function(data) {
-      console.log(JSON.stringify(data));
-      
+      // console.log(JSON.stringify(data));
+     
     });
       
       //Csrf Token
@@ -61,17 +69,7 @@ $(document).ready(function () {
                 }
             }); 
 
-            $('.user').click(function () {
-            $.ajax({
-                    type: "get",
-                    url: "/inbox/chats/" + receiver_id, // need to create this route
-                    data: "",
-                    cache: false,
-                    success: function (data) {
-                        $('#messages').html(data);  
-                    }
-                });
-              });
+            
 
       //Send Message
       $(document).on('keyup', '.message_input', function (e) {
@@ -85,7 +83,8 @@ $(document).ready(function () {
                         data: datastr,
                         cache: false,
                         success: function (data) {
-
+                            
+                        
                         },
                         error: function (jqXHR, status, err) {
                         },
