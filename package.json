@@ -27,6 +27,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "mdb-ui-kit": "^3.8.0",
         "vue": "^2.6.13",
         "vue-chat-scroll": "^1.4.0"
     }
