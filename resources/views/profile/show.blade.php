@@ -1,13 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet"/>
 @include('layouts.navbar')
 @foreach($data as $info)
   <div class="container-fluid pt-5">
     <div class="row">
       
       <div class="col-md-3">
-      <div class="card pt-5">
+      <div class=" pt-5">
       <div class="mb-4 pb-2 text-center">
           @if(auth()->user()->image)
           <a href="{{ url('storage/image/'.$info->image) }}" data-size="1600x1067"><img src="{{ url('storage/image/'.$info->image) }}" class="m-2 rounded z-depth-1 w-50" alt="sample image"></a>
@@ -34,9 +37,9 @@
       </div>
       
       <div class="col-md-8">
-      <div class="card card-body mb-5">
+      <div class=" card-body mb-5">
     <div class="col mb-5">
-      <table class="table table-hover table-fixed">
+      <table class="table table-hover table-fixed table-borderless">
         <thead>
           <tr>
             <th class="h3 text-nowrap">Education and Career</th>
@@ -68,7 +71,7 @@
       </div>
     <div class="row">
     <div class="col-md-6">
-    <table class="table table-hover table-fixed">
+    <table class="table table-hover table-fixed table-borderless">
         <thead>
           <tr>
             <th class="h3 text-nowrap">Family Details</th>
@@ -103,7 +106,7 @@
         </table>
     </div>
     <div class="col-md-6">
-    <table class="table table-hover table-fixed">
+    <table class="table table-hover table-fixed table-borderless">
         <thead>
           <tr>
             <th class="h3 text-nowrap">Astro Details</th>
@@ -142,4 +145,5 @@
     </div>
   </div>
   @endforeach
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
 @endsection

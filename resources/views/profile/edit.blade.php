@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet"/>
     @include('layouts.navbar')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <div class="container   my-5 py-5">
@@ -257,5 +260,6 @@
             </div>
     @endforeach 
         </form>
-    </div>        
+    </div>   
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>     
 @endsection

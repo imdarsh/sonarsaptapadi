@@ -8,7 +8,7 @@
 <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
   @include('layouts.navbar')
   <!-- Background Image -->
-  <div class="p-5 text-center bg-image" style="background-image: url('{{ asset('images/bg.JPG') }}'); height: 400px;">
+  <div class="p-5 text-center bg-image" style="background-image: url('{{ asset('images/bg.JPG') }}'); height: 500px;">
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
@@ -52,67 +52,30 @@
 <!-- Suggestion -->
 <section class="justify-content-center aligns-center p-5">
 <div class="container">
-<h3 class="mb-3 text-center">Suggestion</h3>
+<h3 class="mb-3 text-center">Suggestions</h3>
 <div class="row row-cols-1 p-4 row-cols-md-3 g-4">
+@foreach($getuserlist as $getuser)
   <div class="col">
-    <div class="card h-100">
-      <img
-        src="https://mdbootstrap.com/img/new/standard/city/044.jpg"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in to
-          additional content. This content is a little bit longer.
-        </p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
+  <div class="card  " style="background-color:#ffffff;">
+  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.jpg" class="img-fluid" />
+    <a href="#!">
+      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+    </a>
   </div>
-  <div class="col">
-    <div class="card h-100">
-      <img
-        src="https://mdbootstrap.com/img/new/standard/city/043.jpg"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This card has supporting text below as a natural lead-in to additional
-          content.
-        </p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
+
+  <div class="card-body">
+    <h5 class="card-title">{{ $getuser->name }}</h5>
+    <p class="card-text">
+      <p><b> City :</b> {{ $getuser->city }}</p> 
+      <p><b>Age :</b> {{ $getuser->age }}</p>
+    </p>
+
+    <button type="button" class="btn btn-primary">Send Connection</button>
   </div>
-  
-  <div class="col">
-    <div class="card h-100">
-      <img
-        src="https://mdbootstrap.com/img/new/standard/city/042.jpg"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in to
-          additional content. This card has even longer content than the first to show
-          that equal height action.
-        </p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
+</div>
   </div>
+  @endforeach
 </div>
 </div>
 </section>
