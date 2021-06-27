@@ -1,7 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container my-5 py-5 z-depth-1">
+<style>
+body{
+  background-color: #f8f9fa!important;
+}
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=SansSerif:300,400,500,700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet"/>
+<div class="container my-2 card shadow-5 py-5 z-depth-1">
  
     <section class="text-center text-lg-left dark-grey-text">
 
@@ -9,12 +17,11 @@
           <form class="text-center" method="POST" action="/create-profile">
           @csrf
             <p class="h4 mb-4">Let's Create Your Profile</p>
-
             <p>Creating profile will help you connect with people</p>
 
       <div class="row justify-content-center">
             <div class="col-md-6">
-                  <div class="form-group">
+                  <div class="mb-3">
                   <select  class="form-control" id="profile_for" name="profile_for" required>
                     <option value="" disabled selected>Create Profile For</option>
                     <option value="Son">Son</option>
@@ -25,27 +32,27 @@
                   </select>
                   </div>
 
-            <div class="form-group">
+            <div class="mb-3">
             <input type="text" name="name" id="name" class="form-control" placeholder="Candidate Name" required>
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
             <input type="text" name="age" id="age" class="form-control" placeholder="Candidate Age" required>
             </div>
 
 
-            <div class="form-group">
+            <div class="mb-3">
             <select name="gender" id="gender" class="form-control">
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
             <input name="city" type="text" id="currentCity" class="form-control" placeholder="Your Current City" required>
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
             <select name="living_with_family" class="form-control" required>
             <option value="" disabled selected>Do you live with your family?</option>
             <option value="Yes">Yes</option>
@@ -53,14 +60,14 @@
             </select>
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
             <input name="height" type="text" id="yourHeight" class="form-control" placeholder="Your Height (in cms)" required>
             </div>
 
             </div>
             <div class="col-md-6">
 
-            <div class="form-group">
+            <div class="mb-3">
             <select name="marital_status" class="form-control" required>
             <option value="" disabled selected>Marital Status</option>
             <option value="Never Married">Never Married</option>
@@ -69,7 +76,7 @@
             </select>
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
             <select name="subcaste" class="form-control" required>
             <option value="" disabled selected>Sub-Caste</option>
             <option value="Ahir">Ahir</option>
@@ -78,11 +85,11 @@
             </select>
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
             <input type="text" name="highest_qualification" id="highestQualification" placeholder="Highest Qualification" class="form-control" required>
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
             <select name="working_for" id="workingFor" class="form-control" required>
             <option value="" disabled selected>Working In</option>
             <option value="Goverment Sector">Goverment Sector</option>
@@ -93,11 +100,11 @@
             </select>
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
             <input type="text" id="workingAs" name="working_as" placeholder="Working As" class="form-control">
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
             <select name="annual_income" id="annualIncome" class="form-control">
             <option value="" disabled selected>Annual Income</option>
             <option value="Upto Rs 1 Lakh Yearly">Upto Rs 1 Lakh Yearly</option> 
@@ -115,26 +122,26 @@
             </select>
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
             <input name="mobile_no" type="text" class="form-control mb-4" placeholder="Mobile no" required>
             </div>
-
            </div>
           
             <div class="col">
-            <div class="form-group">
-            <textarea name="bio" name="" id="" cols="30" rows="10" class="form-control" placeholder="Bio" required></textarea>
+              <div class="mb-3">
+              <textarea name="bio" name="" id="" cols="30" rows="10" class="form-control" placeholder="Bio" required></textarea>
+              </div>
+              </div>            
             </div>
-            </div>            
-       </div>
 
-            <div class="form-group">
+            <div class="mb-3">
             <button class="btn btn-primary" type="submit">Create Profile</button>
             </div>
     
           </form>    
     </section>
       </div>
-
-
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="{{ asset('js/scripts.js') }}"></script>
 @endsection

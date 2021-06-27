@@ -27,11 +27,11 @@ class HomeController extends Controller
         $currentuser = User::find(auth()->id());
         if($currentuser->gender == "Male")
         {
-            $getuserlist = User::where('gender','Female')->get();
+            $getuserlist = User::where('gender','Female')->take(3)->get();
              return view('user.home')->with('getuserlist',$getuserlist);
         }
         else{
-            $getuserlist = User::where('gender','Male')->get();
+            $getuserlist = User::where('gender','Male')->take(3)->get();
              return view('user.home')->with('getuserlist',$getuserlist);
         }
     }

@@ -61,5 +61,6 @@ class MessageController extends Controller
 
         $pusher->trigger('chat','ChatEvent',$chat);
         // broadcast(new ChatEvent($message))->toOthers();
+        return redirect()->back();
     }
 }

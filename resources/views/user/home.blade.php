@@ -53,25 +53,25 @@
 <section class="justify-content-center aligns-center p-5">
 <div class="container">
 <h3 class="mb-3 text-center">Suggestions</h3>
-<div class="row row-cols-1 p-4 row-cols-md-3 g-4">
+<div class="row">
 @foreach($getuserlist as $getuser)
-  <div class="col">
-  <div class="card  " style="background-color:#ffffff;">
-  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.jpg" class="img-fluid" />
-    <a href="#!">
-      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-    </a>
-  </div>
-
+  <div class="col-lg-3 col-md-12">
+  <div class="card hover-shadow text-center">
   <div class="card-body">
-    <h5 class="card-title">{{ $getuser->name }}</h5>
+  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+  @if($getuser->image)
+          <img src="{{ url('storage/image/'.$getuser->image) }}" class="img-fluid" alt="sample image">
+          @else
+          <img src="{{ asset('images/avatar.png') }}" class="img-fluid" alt="sample image">
+          @endif
+  </div>
+    <h5 class="card-title">{{ $getuser->id }}</h5>
     <p class="card-text">
       <p><b> City :</b> {{ $getuser->city }}</p> 
       <p><b>Age :</b> {{ $getuser->age }}</p>
     </p>
 
-    <button type="button" class="btn btn-primary">Send Connection</button>
+    <a class="btn btn-primary" href="/sendconnection/{{ $getuser->id }}">Send Connection</a>
   </div>
 </div>
   </div>

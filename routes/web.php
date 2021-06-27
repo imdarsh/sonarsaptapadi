@@ -53,3 +53,10 @@ Route::get('/inbox',[App\Http\Controllers\MessageController::class,'showList']);
 // Route::get('/inbox/chats/{id}', [App\Http\Controllers\MessageController::class,'chatPage']);
 Route::get('/inbox/chats/{id}',[App\Http\Controllers\MessageController::class,'fetchMessages']);
 Route::post('/inbox/chats', [App\Http\Controllers\MessageController::class,'sendMessage']);
+
+//admin
+Route::get('/admin/dashboard',[App\Http\Controllers\AdminController::class,'index']);
+Route::get('/admin/users',[App\Http\Controllers\AdminController::class,'usersData']);
+Route::get('/admin/subscriptions',[App\Http\Controllers\AdminController::class,'subscriptionsData']);
+Route::get('/admin/messages',[App\Http\Controllers\AdminController::class,'messagesData']);
+Route::get('/admin/connections',[App\Http\Controllers\AdminController::class,'connectionsData']);
