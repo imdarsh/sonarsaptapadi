@@ -15,13 +15,14 @@ use App\Http\Controllers\ProfileController;
 */
 
 Route::get('/', function () {
-    return redirect('/register');
+    return redirect('/home');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/search', [App\Http\Controllers\SearchController::class, 'search']);
+Route::get('/details/{id}',[App\Http\Controllers\HomeController::class,'details']);
 
 
 // Profile Routes

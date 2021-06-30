@@ -1,67 +1,7 @@
-html,
-body,
-header,
-.view {
-  height: 100%;
-}
-
-@media (max-width: 740px) {
-  html,
-  body,
-  header,
-  .view {
-    height: 1000px;
-  }
-}
-@media (min-width: 800px) and (max-width: 850px) {
-  html,
-  body,
-  header,
-  .view {
-    height: 650px;
-  }
-}
-
-.top-nav-collapse {
-  background-color: #3f51b5 !important;
-}
-
-.navbar:not(.top-nav-collapse) {
-  background: transparent !important;
-}
-
-@media (max-width: 991px) {
- .navbar:not(.top-nav-collapse) {
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
- }
-}
-
-.rgba-gradient {
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
-}
-
-.card {
-  background-color: rgba(126, 123, 215, 0.2);
-}
-
-.md-form label {
-  color: #ffffff;
-}
-
-h6 {
-  line-height: 1.7;
-}
-
-.upload-btn-wrapper {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-}
-
-.upload-btn-wrapper input[type=file] {
-  font-size: 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
+.hero-image{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../images/bg.JPG');
+  background-size:cover; 
+  background-repeat:no-repeat; 
+  height:700px;
+  background-position:center; 
 }

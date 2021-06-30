@@ -12,10 +12,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -24,15 +20,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $currentuser = User::find(auth()->id());
-        if($currentuser->gender == "Male")
-        {
-            $getuserlist = User::where('gender','Female')->take(3)->get();
+            $getuserlist = User::inRandomOrder()->limit(4)->get();
              return view('user.home')->with('getuserlist',$getuserlist);
-        }
-        else{
-            $getuserlist = User::where('gender','Male')->take(3)->get();
-             return view('user.home')->with('getuserlist',$getuserlist);
-        }
+        
+    }
+    public function details($id)
+    {
+        $user = User::find($id);
+        return view('user.details',['user'=>$user]);
     }
 }
