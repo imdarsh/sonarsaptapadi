@@ -4,6 +4,7 @@
 @include('layouts.navbar')
 <link rel="stylesheet" href="{{ asset('css/profiledetail.css') }}">
 <div class="container my-2">
+    @include('layouts.message')
     <div class="main-body">
     
           <div class="row gutters-sm">

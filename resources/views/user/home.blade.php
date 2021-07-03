@@ -24,10 +24,10 @@
                   <input type="text" name="city" placeholder="City" class="form-control">
                 </div>
                 <div class="col-md-2 my-1 form-group">
-                  <input type="text" name="age_min" placeholder="Minimum Age" class="form-control">
+                  <input type="text" name="age_min" placeholder="Minimum Age" class="form-control" required>
                 </div>
                 <div class="col-md-2 my-1 form-group">
-                  <input type="text" name="age_max" placeholder="Maximum Age" class="form-control">
+                  <input type="text" name="age_max" placeholder="Maximum Age" class="form-control" required>
                 </div>
                 <div class="col-md-2 my-1 form-group">
                   <input type="text" name="highest_qualification" placeholder="Education" class="form-control">

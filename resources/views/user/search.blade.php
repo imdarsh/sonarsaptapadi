@@ -7,29 +7,31 @@
 @include('layouts.navbar')
 <div class="container my-5">
 @include('layouts.message')
-<div class="row text-center text-md-left">
-    @foreach($results as $result)   
-        <div class="col-lg-6 col-md-12 mb-5 justify-content-between">
-          <div class="avatar mb-4 mx-4">
-          @if($result->image)
-          <img src="{{ url('storage/image/'.$result->image) }}" class="img-fluid" alt="sample image" style="width:300px; height:284px;">
+<p class="h2 text-center mb-5">Search Results</p>
+<div class="row">
+@foreach($results as $result)
+  <div class="col-lg-3 col-md-12">
+  <div class="card hover-shadow text-center">
+  <div class="card-body">
+  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+  @if($result->image)
+          <img src="{{ url('storage/image/'.$result->image) }}" class="img-thumbnail" alt="sample image">
           @else
-          <img src="{{ asset('images/avatar.png') }}" class="img-fluid" alt="sample image">
+          <img src="{{ asset('images/avatar.png') }}" class="img-thumbnail" alt="sample image">
           @endif
-          </div>
-          <div class="mx-4">
-            <h4 class="font-weight-bold mb-3">{{ $result->id }}</h4>
-            <h6 class="font-weight-bold grey-text mb-3">{{ $result->city }}</h6>
-            <h6 class="font-weight-bold grey-text mb-3">{{ $result->age }}</h6>
-            <h6 class="font-weight-bold grey-text mb-3">{{ $result->working_for }}</h6>
-            <h6 class="font-weight-bold grey-text mb-3">{{ $result->city }}</h6>
-            <p class="grey-text">{{ $result->bio }}</p>
-            <a class="btn-success btn" href="/sendconnection/{{ $result->id }}">Send Connection</a>
-          </div>
-        </div>
-        
-      @endforeach
-    </div>
+  </div>
+    <h5 class="card-title">{{ $result->id }}</h5>
+    <p class="card-text">
+      <p><b> City :</b> {{ $result->city }}</p> 
+      <p><b>Age :</b> {{ $result->age }}</p>
+    </p>
+
+    <a class="btn btn-primary" href="/details/{{ $result->id }}">See More</a>
+  </div>
+</div>
+  </div>
+  @endforeach
+</div>
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
 @endsection
