@@ -27,7 +27,8 @@ class WishlistController extends Controller
     public function show()
     {
         $id = auth()->id(); 
-        $wishlists = Wishlist::where('uid',$id)->get();
+        $users = Wishlist::where('uid',$id)->get('wishlist_id');
+        $wishlists = User::find($users);
         return view('user.wishlist',['wishlists'=>$wishlists]);
     }
 }
