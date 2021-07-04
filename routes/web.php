@@ -61,3 +61,8 @@ Route::get('/admin/users',[App\Http\Controllers\AdminController::class,'usersDat
 Route::get('/admin/subscriptions',[App\Http\Controllers\AdminController::class,'subscriptionsData']);
 Route::get('/admin/messages',[App\Http\Controllers\AdminController::class,'messagesData']);
 Route::get('/admin/connections',[App\Http\Controllers\AdminController::class,'connectionsData']);
+
+
+//wishllist
+Route::get('/wishlist',[App\Http\Controllers\WishlistController::class,'show']);
+Route::get('/wishlist/{id}',[App\Http\Controllers\WishlistController::class,'store']);

@@ -9,6 +9,9 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/home">Home</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/wishlist">Wishlist</a>
+        </li>
       </ul>
       <ul class="d-flex navbar-nav  mb-2 me-4 mb-lg-0">
       <li class="nav-item dropdown">
@@ -32,6 +35,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <li><a class="dropdown-item" href="/profile">My profile</a></li>
           <li><a class="dropdown-item" href="/connections">Connection</a></li>
+          <li><a class="dropdown-item" href="/wishlist">Wishlist</a></li>
           <li><a class="dropdown-item" href="/matches">Matches</a></li>
           <li><a class="dropdown-item" href="/subscription">Subscription</a></li>
           <li><a class="dropdown-item" href="/settings">Settings</a></li>

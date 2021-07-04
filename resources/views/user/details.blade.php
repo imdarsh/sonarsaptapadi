@@ -21,7 +21,7 @@
                       <h4>{{ $user->id }}</h4>
                       <p class="text-secondary mb-1">{{ $user->working_as }}</p>
                       <p class="text-muted font-size-sm">{{ $user->city }}</p>
-                      <button class="btn btn-primary">Add to Wishlist</button>
+                      <a class="btn btn-primary" href="/wishlist/{{ $user->id }}">Add to Wishlist</a>
                       <a class="btn btn-outline-primary" href="/sendconnection/{{ $user->id }}">Send Connection</a>
                     </div>
                   </div>
