@@ -20,9 +20,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-            $getuserlist = User::inRandomOrder()->limit(4)->get();
-             return view('user.home')->with('getuserlist',$getuserlist);
-        
+            if(auth()->id()){
+                $id = auth()->id();
+                $user = User::find($id);
+                if($user->gender == 'Male'){
+                    $gender = 'Female';
+                }
+                else{
+                    $gender = 'Male';
+                }
+                $getuserlist = User::where('gender',$gender)->inRandomOrder()->limit(4)->get();
+                return view('user.home')->with('getuserlist',$getuserlist);                
+            }
+            else{
+                $getuserlist = User::inRandomOrder()->limit(4)->get();
+                return view('user.home')->with('getuserlist',$getuserlist);
+            }
     }
     public function details($id)
     {

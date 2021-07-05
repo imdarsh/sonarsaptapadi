@@ -65,4 +65,4 @@ Route::get('/admin/connections',[App\Http\Controllers\AdminController::class,'co
 
 //wishllist
 Route::get('/wishlist',[App\Http\Controllers\WishlistController::class,'show']);
-Route::get('/wishlist/{id}',[App\Http\Controllers\WishlistController::class,'store']);
+Route::get  ('/wishlist/{id}',[App\Http\Controllers\WishlistController::class,'store']);

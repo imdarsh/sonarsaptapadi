@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet"/>
     @include('layouts.navbar')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <div class="container   my-5 py-5">
@@ -14,9 +11,9 @@
         <div class="mb-4 pb-2">
          <div class="row-md-6">
             @if($info->image)
-          <img src="{{ url('storage/image/'.$info->image) }}" class="rounded z-depth-1 w-25" alt="sample image">
+          <img src="{{ url('storage/image/'.$info->image) }}" class="rounded-circle img-thumbnail" alt="sample image" style="max-width:200px">
           @else
-          <img src="{{ asset('images/avatar.png') }}" class="rounded z-depth w-25" alt="sample image">
+          <img src="{{ asset('images/avatar.png') }}" class="rounded-circle img-thumbnail" alt="sample image">
           @endif
          </div>
         </div>
@@ -261,5 +258,4 @@
     @endforeach 
         </form>
     </div>   
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>     
 @endsection
