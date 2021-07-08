@@ -15,26 +15,31 @@
             @if(count($receiveduser) < 1 )
                 <div class="h4 text-center">No Connection Received</div>
             @else
-            @foreach($receiveduser as $info)
-                <div class="col-lg-6 col-md-12 mb-5 justify-content-between">
-                    <div class="avatar mb-4 mx-4">
-                    @if($info->image)
-                    <img src="{{ url('storage/image/'.$info->image) }}" class="img-fluid" alt="sample image" style="width:300px; height:284px;">
-                    @else
-                    <img src="{{ asset('images/avatar.png') }}" class="img-fluid" alt="sample image">
-                    @endif
-                    </div>
-                    <div class="mx-4">
-                        <h4 class="font-weight-bold mb-3">{{ $info->id }}</h4>
-                        <h6 class="font-weight-bold grey-text mb-3">{{ $info->city }}</h6>
-                        <h6 class="font-weight-bold grey-text mb-3">{{ $info->age }}</h6>
-                        <h6 class="font-weight-bold grey-text mb-3">{{ $info->working_for }}</h6>
-                        <h6 class="font-weight-bold grey-text mb-3">{{ $info->city }}</h6>
-                        <p class="grey-text">{{ $info->bio }}</p>
-                        <a class="btn-success btn" href="/acceptconnection/{{ $info->id }}">Accept Connection</a>
-                    </div>
-                </div>
-            @endforeach
+            <div class="row">
+        @foreach($receiveduser as $getuser)
+        <div class="col-lg-3 col-md-12">
+        <div class="card hover-shadow text-center">
+        <div class="card-body">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+        @if($getuser->image)
+                <img src="{{ url('storage/image/'.$getuser->image) }}" class="img-thumbnail" alt="sample image">
+                @else
+                <img src="{{ asset('images/avatar.png') }}" class="img-thumbnail" alt="sample image">
+                @endif
+        </div>
+            <h5 class="card-title">{{ $getuser->id }}</h5>
+            <p class="card-text">
+            <p><b> City :</b> {{ $getuser->city }}</p> 
+            <p><b>Age :</b> {{ $getuser->age }}</p>
+            </p>
+            <a class="btn btn-primary" href="/acceptconnection/{{ $getuser->id}}" data-toggle="tooltip" title="Accept Connection">Accept</a>
+            <a class="btn btn-primary" href="/cancelconnection/{{ $getuser->id}}" data-toggle="tooltip" title="Reject Connection">Cancel</a>
+            <!-- <a class="btn btn-primary" href="/details/{{ $getuser->id }}">See More</a> -->
+        </div>
+        </div>
+        </div>
+        @endforeach
+        </div>
             @endif
 
         </div>
@@ -46,31 +51,34 @@
     <p class="h2">Sent Connections</p>
     <hr>
     <div class="container my-5">
-        <div class="row text-center text-md-left">
-            @if(count($sentuser) < 1 )
+    @if(count($sentuser) < 1 )
                 <div class="h4 text-center">No Connection Sent</div>
             @else
-            @foreach($sentuser as $info)
-            <div class="col-lg-6 col-md-12 mb-5 justify-content-between">
-                <div class="avatar mb-4 mx-4">
-                @if($info->image)
-                    <img src="{{ url('storage/image/'.$info->image) }}" class="img-fluid" alt="sample image" style="width:300px; height:284px;">
-                    @else
-                    <img src="{{ asset('images/avatar.png') }}" class="img-fluid" alt="sample image">
-                    @endif
-                </div>
-                <div class="mx-4">
-                    <h4 class="font-weight-bold mb-3">{{ $info->id }}</h4>
-                    <h6 class="font-weight-bold grey-text mb-3">{{ $info->city }}</h6>
-                    <h6 class="font-weight-bold grey-text mb-3">{{ $info->age }}</h6>
-                    <h6 class="font-weight-bold grey-text mb-3">{{ $info->working_for }}</h6>
-                    <h6 class="font-weight-bold grey-text mb-3">{{ $info->city }}</h6>
-                    <p class="grey-text">{{ $info->bio }}</p>
-                </div>
-            </div>
-            @endforeach
-            @endif
+    <div class="row">
+        @foreach($sentuser as $getuser)
+        <div class="col-lg-3 col-md-12">
+        <div class="card hover-shadow text-center">
+        <div class="card-body">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+        @if($getuser->image)
+                <img src="{{ url('storage/image/'.$getuser->image) }}" class="img-thumbnail" alt="sample image">
+                @else
+                <img src="{{ asset('images/avatar.png') }}" class="img-thumbnail" alt="sample image">
+                @endif
         </div>
+            <h5 class="card-title">{{ $getuser->id }}</h5>
+            <p class="card-text">
+            <p><b> City :</b> {{ $getuser->city }}</p> 
+            <p><b>Age :</b> {{ $getuser->age }}</p>
+            </p>
+
+            <a class="btn btn-primary" href="/details/{{ $getuser->id }}">See More</a>
+        </div>
+        </div>
+        </div>
+        @endforeach
+        </div>
+        @endif
     </div>
 
     </div>

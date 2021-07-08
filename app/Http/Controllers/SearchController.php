@@ -24,7 +24,9 @@ class SearchController extends Controller
         $age_min = $_GET['age_min'];
         $age_max = $_GET['age_max'];
         $education = $_GET['highest_qualification'];
-        $results = User::where('gender',$gender)->where('city','like','%'.$city.'%')->whereBetween('age',[$age_min-1,$age_max])->where('highest_qualification','like','%'.$education.'%')->get();
+        $id = $_GET['id'];
+        $manglik = $_GET['manglik'];
+        $results = User::where('gender',$gender)->where('city','like','%'.$city.'%')->whereBetween('age',[$age_min-1,$age_max])->where('highest_qualification','like','%'.$education.'%')->where('id',$id)->where('manglik',$manglik)->get();
         if($results->isEmpty()){
             $results = User::where('gender',$gender)->get();
             return view('user.search', ['results' => $results]);   

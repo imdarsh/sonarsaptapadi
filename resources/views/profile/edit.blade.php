@@ -22,6 +22,7 @@
         <span>Choose Image</span>
         <input type="file" name="image" class="upload" />
         </div>
+        <button class="btn btn-primary btn-rounded" type="submit">Update Image</button>
         </div>
         </div>
         <p class="h2">Bio</p>

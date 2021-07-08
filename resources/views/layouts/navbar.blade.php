@@ -15,6 +15,12 @@
       </ul>
       <ul class="d-flex navbar-nav  mb-2 me-4 mb-lg-0">
       <li class="nav-item dropdown">
+        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Notification</a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a href="" class="dropdown-item">You Have 1 Notification</a></li>
+      </ul>
+      </li>
+      <li class="nav-item dropdown">
           
           @guest
                               @if (Route::has('login'))

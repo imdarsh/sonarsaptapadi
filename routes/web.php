@@ -38,6 +38,7 @@ Route::post('/profile/uploadimage', [App\Http\Controllers\ProfileController::cla
 Route::get('/connections', [App\Http\Controllers\ConnectionController::class, 'connections']);
 Route::get('/sendconnection/{id}', [App\Http\Controllers\ConnectionController::class, 'sendconnection']);
 Route::get('/acceptconnection/{id}', [App\Http\Controllers\ConnectionController::class, 'acceptconnection']);
+Route::get('/cancelconnection/{id}', [App\Http\Controllers\ConnectionController::class, 'cancelconnection']);
 Route::get('/matches', [App\Http\Controllers\ConnectionController::class, 'matches']);
 
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Connection;
 use App\Models\User;
+use App\Notifications\ConnectionNotification;
+use Illuminate\Support\Facades\Notification;
 use DB;
 
 class ConnectionController extends Controller
@@ -26,7 +28,6 @@ class ConnectionController extends Controller
         $id = auth()->id();
         $data = Connection::where('uid2',$id)->where('status',0)->get('uid1','status');
         $receiveduser = User::find($data);
-       
         return view('connections.showconnection',['sentuser'=>$sentuser,'receiveduser'=>$receiveduser]);
     }
 
@@ -44,6 +45,7 @@ class ConnectionController extends Controller
             $send->uid2 = $id;
             $send->status = $status;
             $send->save();
+            // Notification::send($ids,new ConnectionNotification($request->body));
             return redirect()->back()->with('success','Connection Sent Successfully');
         }
         else{
@@ -60,6 +62,13 @@ class ConnectionController extends Controller
         $conn->status = 1;
         $conn->update();
         return redirect()->back()->with('success','Connection Accepted Successfully');
+    }
+
+    public function cancelconnection($id)
+    {
+        $ids = auth()->id();
+        $conn = Connection::where('uid1',$id)->where('uid2',$ids)->where('status',0)->first()->delete(); 
+        return redirect()->back()->with('success','Connection Rejected');
     }
 
     // Matched Connection Data

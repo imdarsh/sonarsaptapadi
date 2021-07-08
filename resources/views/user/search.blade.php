@@ -26,7 +26,7 @@
       <p><b>Age :</b> {{ $result->age }}</p>
     </p>
 
-    <a class="btn btn-primary" href="/details/{{ $result->id }}">See More</a>
+    <a class="btn btn-primary" href="/details/{{ $result->id }}" data-toggle="tooltip" title="Click here to see user details">See More</a>
   </div>
 </div>
   </div>

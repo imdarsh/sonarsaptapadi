@@ -22,7 +22,7 @@
             <p><b>Age :</b> {{ $wishlist->age }}</p>
             </p>
 
-            <a class="btn btn-primary" href="/details/{{ $wishlist->id }}">See More</a>
+            <a class="btn btn-primary" href="/details/{{ $wishlist->id }}" data-toggle="tooltip" title="Click here to see user details">See More</a>
         </div>
         </div>
         </div>

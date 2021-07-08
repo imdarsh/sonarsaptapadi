@@ -127,6 +127,7 @@ class ProfileController extends Controller
             $fileNameToStore = $id. '_'. time().'.'.$extension;
             $path = $request->file('image')->storeAs('image', $fileNameToStore, 'public');
             $upload->image = $fileNameToStore;
+            
             $upload->save();
             }
             else {

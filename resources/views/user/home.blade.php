@@ -34,7 +34,17 @@
                   </select>
                 </div>
                 <div class="col-md-2 my-1 form-group">
-                  <button class="btn btn-primary btn-md" type="submit">Search</button>
+                  <input type="text" name="id" placeholder="Search By ID" class="form-control">
+                </div>
+                <div class="col-md-2 form-group">
+                <select name="manglik" class="form-control" placeholder="Manglik">
+                <option value="No">Not Manglik</option>
+                <option value="Yes">Manglik</option>
+                </select>
+              </div>
+              </div>
+                <div class="col-md-2 my-1 form-group">
+                  <button class="btn btn-primary btn-md" type="submit" data-toggle="tooltip" title="Search to find user">Search</button>
                 </div>
               </div>
         </form>
@@ -68,7 +78,7 @@
       <p><b>Age :</b> {{ $getuser->age }}</p>
     </p>
 
-    <a class="btn btn-primary" href="/details/{{ $getuser->id }}">See More</a>
+    <a class="btn btn-primary" href="/details/{{ $getuser->id }}" data-toggle="tooltip" title="Click here to see user details">See More</a>
   </div>
 </div>
   </div>
