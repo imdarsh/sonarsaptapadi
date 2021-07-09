@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // use App\Models\Sitedata;
 use App\Models\User;
+use Image;
 
 class ProfileController extends Controller
 {
@@ -102,11 +103,12 @@ class ProfileController extends Controller
         $data->email = $request->input('email');
         $data->mobile_no = $request->input('mobile_no');
         if ($request->hasFile('image')) {
-            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            $image = Image::make($request->file('image'));
+            $filenameWithExt = $image->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            $extension = $request->file('image')->getClientOriginalExtension();
+            $extension = $image->getClientOriginalExtension();
             $fileNameToStore = $id. '_'. time().'.'.$extension;
-            $path = $request->file('image')->storeAs('image', $fileNameToStore, 'public');
+            $path = $image->storeAs('image', $fileNameToStore, 'public');
             $data->image = $fileNameToStore;
             }
             else {
@@ -116,24 +118,24 @@ class ProfileController extends Controller
         return redirect('/profile');
     }
 
-    public function uploadimage(Request $request)
-    {   
-        $id = auth()->id();
-        $upload = User::find($id);
-        if ($request->hasFile('image')) {
-            $filenameWithExt = $request->file('image')->getClientOriginalName();
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            $extension = $request->file('image')->getClientOriginalExtension();
-            $fileNameToStore = $id. '_'. time().'.'.$extension;
-            $path = $request->file('image')->storeAs('image', $fileNameToStore, 'public');
-            $upload->image = $fileNameToStore;
+    // public function uploadimage(Request $request)
+    // {   
+    //     $id = auth()->id();
+    //     $upload = User::find($id);
+    //     if ($request->hasFile('image')) {
+    //         $filenameWithExt = $request->file('image')->getClientOriginalName();
+    //         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+    //         $extension = $request->file('image')->getClientOriginalExtension();
+    //         $fileNameToStore = $id. '_'. time().'.'.$extension;
+    //         $path = $request->file('image')->storeAs('image', $fileNameToStore, 'public');
+    //         $upload->image = Image::make($path)->resize(300,300);
             
-            $upload->save();
-            }
-            else {
-            $fileNameToStore = 'noimage.jpg';
-            }
-            return redirect('/profile');
-    }
+    //         $upload->save();
+    //         }
+    //         else {
+    //         $fileNameToStore = 'noimage.jpg';
+    //         }
+    //         return redirect('/profile');
+    // }
 
 }
