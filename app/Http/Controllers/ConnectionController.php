@@ -44,8 +44,9 @@ class ConnectionController extends Controller
             $send->uid1 = $ids;
             $send->uid2 = $id;
             $send->status = $status;
+            $user = User::find($id);
             $send->save();
-            // Notification::send($ids,new ConnectionNotification($request->body));
+            Notification::send($user,new ConnectionNotification($send));
             return redirect()->back()->with('success','Connection Sent Successfully');
         }
         else{

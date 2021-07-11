@@ -16,10 +16,9 @@ class ConnectionNotification extends Notification
      *
      * @return void
      */
-    public function __construct($body)
+    public function __construct()
     {
-        //
-        $this->$body = $body;
+       
     }
 
     /**
@@ -57,7 +56,7 @@ class ConnectionNotification extends Notification
     {
         return [
             //
-            'body' => 'YOu have 1 notification'
+             'You have new Connection'
         ];
     }
 }

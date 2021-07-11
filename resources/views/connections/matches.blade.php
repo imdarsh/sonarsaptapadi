@@ -30,6 +30,7 @@
                     <h6 class="font-weight-bold grey-text mb-3">{{ $info->working_for }}</h6>
                     <h6 class="font-weight-bold grey-text mb-3">{{ $info->city }}</h6>  
                 </div>
+                <a href="/inbox" class="btn btn-success">Chat</a>
                 </div>
             </div>
             @endforeach
