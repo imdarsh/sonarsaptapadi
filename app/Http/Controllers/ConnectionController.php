@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Connection;
 use App\Models\User;
-use App\Notifications\ConnectionNotification;
+use App\Notifications\ReceivedConnection;
+use App\Notifications\AcceptConnection;
+use App\Notifications\RejectConnection;
 use Illuminate\Support\Facades\Notification;
 use DB;
 
@@ -46,7 +48,7 @@ class ConnectionController extends Controller
             $send->status = $status;
             $user = User::find($id);
             $send->save();
-            Notification::send($user,new ConnectionNotification($send));
+            Notification::send($user,new ReceivedConnection($send));
             return redirect()->back()->with('success','Connection Sent Successfully');
         }
         else{
@@ -61,14 +63,18 @@ class ConnectionController extends Controller
         $ids = auth()->id();
         $conn = Connection::where('uid1',$id)->where('uid2',$ids)->where('status',0)->first();
         $conn->status = 1;
+        $user = User::find($id);
         $conn->update();
+        Notification::send($user,new AcceptConnection($user));
         return redirect()->back()->with('success','Connection Accepted Successfully');
     }
 
     public function cancelconnection($id)
     {
+        $user = User::find($id);
         $ids = auth()->id();
         $conn = Connection::where('uid1',$id)->where('uid2',$ids)->where('status',0)->first()->delete(); 
+        Notification::send($user,new RejectConnection($user));
         return redirect()->back()->with('success','Connection Rejected');
     }
 

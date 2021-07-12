@@ -30,12 +30,15 @@
                               @endif
                           @else
                           <li class="nav-item dropdown">
-        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Notification</a>
+        <a class="nav-link active dropdown-toggle" href="{{ auth()->user()->unreadNotifications->markAsRead() }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Notification<span class="badge badge-primary text-bold">{{ count(auth()->user()->unreadNotifications) }}</span></a>
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      
-      @foreach(auth()->user()->unreadNotifications as $notification)
-      <li><a href="" class="dropdown-item">{{ $notification->data }}</a></li>
-      @endforeach
+      @if(count(auth()->user()->unreadNotifications) > 0)
+        @foreach(auth()->user()->unreadNotifications as $notification)
+        <li><a href="" class="dropdown-item text-wrap">{{ $notification->data['note'] }}</a></li>
+        @endforeach
+      @else
+        <li><a href="" class="dropdown-item text-wrap">You Have No New Notification</a></li>
+      @endif
       </ul>
       </li>
                           <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class ConnectionNotification extends Notification
+class ReceivedConnection extends Notification
 {
     use Queueable;
 
@@ -18,7 +18,7 @@ class ConnectionNotification extends Notification
      */
     public function __construct($send)
     {
-       $this->send = $send;
+        $this->send = $send;
     }
 
     /**
@@ -55,8 +55,7 @@ class ConnectionNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
-             'note' => 'You have received a Connection from '.$this->send->uid1
+            'note' => 'You have received a Connection from '.$this->send->uid1
         ];
     }
 }
