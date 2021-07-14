@@ -22,6 +22,13 @@ class ProfileController extends Controller
 
     public function create(Request $request) 
     {   
+        // $validated = $request->validate([
+        //     'name' => ['required','string' , 'max:255'],
+        //     'age' => ['required', 'min:2','max:3','integer'],
+        //     'city' => ['required','string','max:255'],
+        //     ''
+        // ]);
+
         $id = auth()->id();
         $profile = User::find($id);  
         $profile->profile_for = $request->input('profile_for');
